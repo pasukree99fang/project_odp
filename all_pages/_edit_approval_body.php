@@ -46,3 +46,6 @@
   <?php
     mysqli_close($mysqli);
   ?>
+
+<!-- <a href="ชื่อไฟล์.php?sta=yes&uskey=<?php echo $objResult['us_username'];?>">yes</a>
+<a href="ชื่อไฟล์.php?sta=no&uskey=<?php echo $objResult['us_username'];?>">no</a> -->
