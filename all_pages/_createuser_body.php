@@ -6,14 +6,20 @@
 ?>
 
 <div class="row">
-        <!-- left column -->
         <div class="col-md-12">
-          <!-- general form elements -->
             <div class="box box-info">
                     <div class="box-header with-border">
                         <h3 class="box-title">Create User</h3>
                     </div>
-                    <!-- /.box-header -->
+
+                    <!-- DB tb_company -->
+                    <?php $SQL1 = "SELECT a.us_company_id, a.us_username, a.us_firstname, 
+                    b.cpn_id, b.cpn_name FROM tb_user a 
+                    LEFT OUTER JOIN (SELECT * FROM tb_company) b ON (a.us_company_id=b.cpn_id)
+                    WHERE us_username = '".$_SESSION['us_username']."'";
+                    $objQuery1 = mysqli_query($mysqli,$SQL1);
+                    $objResult1 = mysqli_fetch_array($objQuery1,MYSQLI_ASSOC); ?>
+
                     <!-- form start -->
                     <form role="form">
                         <div class="box-body">
@@ -21,7 +27,7 @@
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <label>Company</label>
-                                        <input type="email" class="form-control" id="inputEmail3" placeholder="2YOU" disabled>
+                                        <input type="email" class="form-control" id="inputEmail3" placeholder="<?php echo $objResult1['cpn_name']; ?>" disabled>
                                     </div>
                                 </div>
                             </div>    
@@ -164,24 +170,7 @@
                                 </div>
                             </div>
 
-                            
-
-
-                            
-
-                            <!-- <div class="form-group">
-                                <label for="exampleInputFile">File input</label>
-                                <input type="file" id="exampleInputFile">
-
-                                <p class="help-block">Example block-level help text here.</p>
-                            </div>
-                            <div class="checkbox">
-                                <label>
-                                    <input type="checkbox"> Check me out
-                                </label>
-                            </div> -->
                         </div>
-                        <!-- /.box-body -->
 
                         <div class="box-footer">
                             <button type="submit" class="btn btn-primary pull-right">Submit</button>
