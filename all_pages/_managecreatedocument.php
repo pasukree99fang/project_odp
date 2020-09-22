@@ -11,7 +11,7 @@
 
     	echo "Department ".$dpm=$_POST['dpm'];
     	echo "<br>";
-    	echo "Sub Department ".$sub_dpm=$_POST['sub_dpm'];
+    	echo "Sub Department ".$sub_dpm=$_POST['sub_dpm']; 
     	echo "<br>";
     	echo "Position ".$pos=$_POST['pos'];
 		echo "<br>";
