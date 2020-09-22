@@ -1,3 +1,6 @@
+<?php 
+  session_start();
+  ?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -14,32 +17,26 @@
   $objResult1 = mysqli_fetch_array($objQuery1,MYSQLI_ASSOC);  ?>
   
 <body>
-<div class="wrapper">
-  <!-- Main content -->
-  <section class="invoice">
-    <!-- title row -->
-    <div class="row">
-      <div class="col-xs-12">
-        <h2 class="page-header">
-          <i class="fa fa-globe"></i><?php echo $objResult1['cpn_name'] ?>
+  <!-- left column -->
+  <div class="col-md-12">
+          <!-- general form elements -->
+            <div class="box box-info">
+                    <div class="box-header ">
+                        <h3>Profile</i>
+          <a href="_edit_profile.php"> <button type="button" class="btn btn-info btn-flat pull-right"> Edit </button></a>
+          <h2 class="page-header"></h2>
+
+          <!-- Main content -->
           <!-- <small class="pull-right">Date: 2/10/2014</small> -->
-        </h2>
-      </div>
       <!-- /.col -->
-    </div>
     <!-- info row -->
     <div class="row invoice-info">
-      <div class="col-sm-4 invoice-col">
-      <table class="table table-hover table-striped">
-                <tr>
-                    <th width="20"> <div align="center"><img src="dist/img/doggy.jpg" class="user-image" alt="User Image" width='350px' height='400px' >
-        </div></th>
-                </tr>   
-        </table>
-      
+      <div class="col-sm-5 invoice-col">
+         <div align="center"><img src="dist/img/doggy.jpg" class="user-image" alt="User Image" width='250px' height='300px' >
+        </div>
       </div>
       <!-- /.col -->
-      <div class="col-sm-4 invoice-col">
+      <div class="col-sm-5 invoice-col">
         <strong><h3> Profile </h3></strong>
           <h4>User : <?php echo $_SESSION['us_firstname']; ?> <?php echo $_SESSION['us_lastname']; ?></h4>
           <h4>Email : <?php echo $_SESSION['us_email'] ?></h4>
@@ -48,6 +45,9 @@
           <h4>Sub-department :  </h4>
         <!-- DB to find manager-->
          <h4>Manager :  <?php echo  $_SESSION['us_manager_id'] ?> </h4>
+
+</body>
+</html>
       
      
       
