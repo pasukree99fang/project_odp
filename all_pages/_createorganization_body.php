@@ -29,6 +29,26 @@
                             </div>    
 
                             <div class="row">
+                                <!-- <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label for="exampleInputEmail1">Department</label>
+                                        <input type="username" class="form-control" id="CreateDepartment" name="CreateDepartment" placeholder="Enter Department">
+                                    </div>
+                                </div> -->
+
+                                <!-- <div class="col-md-6">
+                                    <div class="input-group">
+                                    <label for="exampleInputEmail1">Department   </label>
+                                        <input class="form-control" placeholder="Type message...">
+
+                                        <div class="input-group-btn">
+                                        <button type="button" class="btn btn-success"><i class="fa fa-plus"></i></button>
+                                        </div>
+                                    </div>
+                                </div> -->
+                            </div>
+
+                            <div class="row">
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <label for="exampleInputEmail1">Department</label>

@@ -165,14 +165,24 @@
                             </div>
 
                             <div class="row">
-                                <div class="col-md-6">
+                                <div class="col-md-4">
                                     <div class="form-group">
                                         <label>Profile picture</label>
                                         <input type="file" id="InputfileUser" name="InputfileUser">
                                         <p class="help-block">Select employee avatar.</p>
                                     </div>
                                 </div>
+
+                                <div class="col-md-4">
+                                    <div class="checkbox">
+                                        <label for="chkmanager">
+                                            <input type="checkbox" id="chkmanager">
+                                            Checkbox in case of user who is manager
+                                        </label>
+                                    </div>
+                                </div>
                             </div>
+                            
 
                         </div>
 
