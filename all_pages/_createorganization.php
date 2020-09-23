@@ -12,7 +12,9 @@
     <?php include '_menu.php'; ?>
     <div class="content-wrapper">
       <section class="content">
+      <form role="form" action="_managecreate_organization.php" method="post">
         <?php include '_createorganization_body.php'; ?>
+      </form>
       </section>
     </div>
 

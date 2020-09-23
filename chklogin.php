@@ -18,6 +18,7 @@ if (isset($_POST['user']) && $_POST['user'] != ""
 		$_SESSION['us_isadmin']=$objResult['us_isadmin'];
 		$_SESSION['us_isapproval']=$objResult['us_isapproval'];
 		$_SESSION['us_company_id']=$objResult['us_company_id'];
+		$_SESSION['us_photo']=$objResult['us_photo'];
 
 
 	if ($_POST['user'] != $objResult['us_username'] && $_POST['pass'] != $objResult['us_password']) {
