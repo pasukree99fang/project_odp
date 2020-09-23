@@ -25,11 +25,14 @@
     	echo "<br>";
     	echo "Position ".$PositionUser=$_POST['PositionUser']; 
     	echo "<br>";
-        echo "Inputfile ".$file_input=$_FILES["InputfileUser"]["name"];
-        echo "<br>";
         echo "Company ".$cpn_name=$_POST['cpn_name'];
+        echo "<br>";
+		echo "Inputfile ".$file_input=$_FILES["InputfileUser"]["name"];
 
-        $sql="INSERT INTO tb_user (us_username, us_password, us_firstname, us_lastname, us_email, us_password_approve, us_) VALUES ('$inputEmail3','$us_username','$stepnum')";
+        $sql="INSERT INTO tb_user (us_username, us_password, us_firstname, us_lastname, us_email, us_password_approve,
+									us_manager_id, us_isadmin, us_isapproval, us_company_id, us_photo) 
+		VALUES ('$UsernameUser','$PasswordUser','$FirstnameUser','$LastnameUser','$EmailUser','$PasswordForApprove','$ManagerUser'
+		'$IsAdminUser','$IsApprovalUser','$DepartmentUser','$SubDepartmentUser','$PositionUser','$cpn_name','$file_input')";
         $query=mysqli_query($mysqli, $sql);
 
 
