@@ -43,7 +43,7 @@
                     <td class="mailbox-name"><div align="center"><?php echo $objResult["us_isapproval"];?></div></td>
                     <td><div align="center"><button type="button" class="btn btn-info btn-flat">Edit!</button></div></td>
                     <td><div align="center"><button type="button" class="btn btn-info btn-danger ">Delete!</button></div></td>
-                </tr>
+                </tr> 
                 <?php } ?>
               </table>
                 <!-- /.table -->
