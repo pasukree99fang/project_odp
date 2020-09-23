@@ -5,7 +5,7 @@
         <div class="col-md-12">
             <div class="box box-info">
                     <div class="box-header with-border">
-                        <h3 class="box-title">Create Organization</h3>
+                        <h3 class="box-title">Create Organization </h3>
                     </div>
 
                     <!-- DB tb_company -->
@@ -23,7 +23,8 @@
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <label>Company</label>
-                                        <input type="email" class="form-control" id="cpn_name" name="cpn_name" placeholder="<?php echo $objResult1['cpn_name']; ?>" disabled>
+                                        <input type="text" class="form-control" id="cpn_name" name="cpn_name" placeholder="<?php echo $objResult1['cpn_name']; ?>" disabled>
+                                        <input type="hidden" name="cpn_id" placeholder="<?php echo$objResult1["cpn_id"]; ?>">
                                     </div>
                                 </div>
                             </div>    
@@ -52,7 +53,7 @@
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <label for="exampleInputEmail1">Department</label>
-                                        <input type="username" class="form-control" id="CreateDepartment" name="CreateDepartment" placeholder="Enter Department">
+                                        <input type="text" class="form-control" id="CreateDepartment" name="CreateDepartment" placeholder="Enter Department">
                                     </div>
                                 </div>
                             </div>
@@ -61,7 +62,7 @@
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <label for="exampleInputEmail1">Sub Department</label>
-                                        <input type="Firstname" class="form-control" id="CreateSub" name="CreateSub" placeholder="Enter Sub Department">
+                                        <input type="text" class="form-control" id="CreateSub" name="CreateSub" placeholder="Enter Sub Department">
                                     </div>
                                 </div>
                             </div>
@@ -70,7 +71,7 @@
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <label for="exampleInputEmail1">Position</label>
-                                        <input type="Firstname" class="form-control" id="CreatePosition" name="CreatePosition" placeholder="Enter Position">
+                                        <input type="text" class="form-control" id="CreatePosition" name="CreatePosition" placeholder="Enter Position">
                                     </div>
                                 </div>
                             </div>
