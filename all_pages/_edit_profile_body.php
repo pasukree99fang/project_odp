@@ -68,19 +68,26 @@
       <!-- /.col -->
 <div class="col-sm-5 invoice-col">
 <br>
-        <form action="_manage_profile.php" >
+
+<!--ลองเขียน-->
+<!--  $usersession =$_SESSION['us_username'] 
+$sql = mysqli_query("SELECT * from tb_user where us_username='".$usersession."' ");
+$row = $mysqli_fetch_assoc($sql);
+?> -->
+        <form action="_manage_profile.php" method="POST" >
            <h4> <label>User</label>
-           <input type="text" class="form-control" id="inputUser" placeholder="<?php echo $_SESSION['us_firstname']; ?> <?php echo $_SESSION['us_lastname']; ?>" >
+           Firstname : <input type="text" class="form-control" id="inputfname" name="inputfname" placeholder="<?php echo $_SESSION['us_firstname']; ?>" >
+           Lastname : <input type="text"  class="form-control" id="inputlname" name="inputlname" placeholder="<?php echo $_SESSION['us_lastname']; ?>" >
            <br> <label>Email</label> 
-        <input type="email" class="form-control" id="inputEmail3" placeholder="<?php echo $_SESSION['us_email'] ?>" >
+        <input type="email" class="form-control" id="inputEmail" name="inputEmail" placeholder="<?php echo $_SESSION['us_email'] ?>" >
         <br><label>Position</label> 
-        <input type="text" class="form-control" id="Position" placeholder="<?php echo $objResult1['pst_name'] ?>" disabled >
+        <input type="text" class="form-control" id="Position" name="Position"placeholder="<?php echo $objResult1['pst_name'] ?>" disabled >
         <br><label>Department</label> 
-        <input type="text" class="form-control" id="Department" placeholder="<?php echo $objResult2['dpm_name'] ?>" disabled >
+        <input type="text" class="form-control" id="Department" name="Department" placeholder="<?php echo $objResult2['dpm_name'] ?>" disabled >
         <br><label>Sub-department</label> 
-        <input type="text" class="form-control" id="SubDepartment" placeholder="<?php echo $objResult3['sub_name'] ?>" disabled >
+        <input type="text" class="form-control" id="SubDepartment" name="SubDepartment" placeholder="<?php echo $objResult3['sub_name'] ?>" disabled >
         <br><label>Manager</label> 
-        <input type="text" class="form-control" id="SubDepartment" placeholder="<?php echo  $_SESSION['us_manager_id'] ?>" disabled >
+        <input type="text" class="form-control" id="Manager" name="Manager" placeholder="<?php echo  $_SESSION['us_manager_id'] ?>" disabled >
 </h4><br>
 
 <button type="reset" class="btn btn-info btn-flat pull-right">Cancel </button>
