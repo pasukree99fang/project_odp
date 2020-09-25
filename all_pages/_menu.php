@@ -1,3 +1,36 @@
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+<script>
+    $(document).ready(function(e) {
+        increaseNotify();
+        setInterval(increaseNotify, 3000);
+        $("#btn1").click(function(){
+            decreaseNotify()
+        })
+    });
+
+    function increaseNotify() { // โหลดตัวเลขทั้งหมดที่ถูกส่งมาแสดง
+        $.ajax({
+            url: "increase.php",
+            type: 'GET',
+            success: function(obj) {
+                var obj = JSON.parse(obj);
+                $(".badge_number").text(obj.badge_number);
+            }
+        });
+    }
+
+    function decreaseNotify(){ // ลบตัวเลข badge number
+	$.ajax({
+		url: "decrease.php",
+		type: 'GET',
+		success: function(obj) {
+			
+		}
+	});
+}
+</script>
+
 <header class="main-header">
 <?php include 'connectdb.php'; ?>
     <a href="_home.php" class="logo">
@@ -13,19 +46,19 @@
         <ul class="nav navbar-nav">
           
           <li class="dropdown notifications-menu">
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+            <a href="#" id="btn1" class="dropdown-toggle" data-toggle="dropdown">
               <i class="fa fa-bell-o"></i>
-              <span class="label label-warning">10</span>
+              <span class="badge_number label label-warning">0</span>
             </a>
             <ul class="dropdown-menu">
-              <li class="header">You have 10 notifications</li>
+              <li class="header">You have notifications</li>
               <li>
                 
                 <ul class="menu">
                   
                 </ul>
               </li>
-              <li class="footer"><a href="#">View all</a></li>
+              <li class="footer"><a href="send.php">View all</a></li>
             </ul>
           </li>
           
