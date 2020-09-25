@@ -75,9 +75,13 @@ $sql = mysqli_query("SELECT * from tb_user where us_username='".$usersession."' 
 $row = $mysqli_fetch_assoc($sql);
 ?> -->
         <form action="_manage_profile.php" method="POST" >
-           <h4> <label>User</label>
-           Firstname : <input type="text" class="form-control" id="inputfname" name="inputfname" placeholder="<?php echo $_SESSION['us_firstname']; ?>" >
-           Lastname : <input type="text"  class="form-control" id="inputlname" name="inputlname" placeholder="<?php echo $_SESSION['us_lastname']; ?>" >
+           <!-- <h4> <label>User</label> -->
+           <br><label>Username</label> 
+        <input type="text" class="form-control" id="username" name="username" placeholder="<?php echo  $_SESSION['us_username'] ?>" disabled>
+        <label>Firstname</label>   
+        <input type="text" class="form-control" id="inputfname" name="inputfname" placeholder="<?php echo $_SESSION['us_firstname']; ?>" >
+        <label>Lastname</label>     
+        <input type="text"  class="form-control" id="inputlname" name="inputlname" placeholder="<?php echo $_SESSION['us_lastname']; ?>" >
            <br> <label>Email</label> 
         <input type="email" class="form-control" id="inputEmail" name="inputEmail" placeholder="<?php echo $_SESSION['us_email'] ?>" >
         <br><label>Position</label> 
@@ -88,10 +92,12 @@ $row = $mysqli_fetch_assoc($sql);
         <input type="text" class="form-control" id="SubDepartment" name="SubDepartment" placeholder="<?php echo $objResult3['sub_name'] ?>" disabled >
         <br><label>Manager</label> 
         <input type="text" class="form-control" id="Manager" name="Manager" placeholder="<?php echo  $_SESSION['us_manager_id'] ?>" disabled >
+        
+
 </h4><br>
 
 <button type="reset" class="btn btn-info btn-flat pull-right">Cancel </button>
-<button type="submit" class="btn btn-info btn-flat pull-right"> Save &nbsp;</button>  &nbsp;&nbsp;&nbsp;
+<button type="submit" name="save profile" class="btn btn-info btn-flat pull-right"> Save &nbsp;</button>  &nbsp;&nbsp;&nbsp;
     
 
 </form>
