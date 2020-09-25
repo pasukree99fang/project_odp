@@ -7,7 +7,7 @@
 
 <div class="row">
 <div class="col-md-12">
-          <div class="box box-success">
+          <div class="box box-info">
             <div class="box-header with-border">
               <h3 class="box-title">ALL User</h3>
 
@@ -29,6 +29,7 @@
                     <th width="150"> <div align="center">Email </div></th>
                     <th width="150"> <div align="center">Admin </div></th>
                     <th width="150"> <div align="center">Approval </div></th>
+                    <th width="150"> <div align="center">Edit user </div></th>
                     <th width="150"> <div align="center">Delete user </div></th>
                 </tr>
                 <?php
@@ -40,8 +41,9 @@
                     <td class="mailbox-name"><div align="center"><?php echo $objResult["us_email"];?></div></td>
                     <td class="mailbox-name"><div align="center"><?php echo $objResult["us_isadmin"];?></div></td>
                     <td class="mailbox-name"><div align="center"><?php echo $objResult["us_isapproval"];?></div></td>
-                    <td><div align="center"><button type="button" class="btn btn-info btn-flat">Delete!</button></div></td>
-                </tr>
+                    <td><div align="center"><button type="button" class="btn btn-info btn-flat">Edit!</button></div></td>
+                    <td><div align="center"><button type="button" class="btn btn-info btn-danger ">Delete!</button></div></td>
+                </tr> 
                 <?php } ?>
               </table>
                 <!-- /.table -->

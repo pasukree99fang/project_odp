@@ -9,7 +9,7 @@
           </div> -->
         </div>
 
-        <?php include '_managform.php'; ?>
+        <?php include '_manageform.php'; ?>
 
         <div class="box-body">
           <div class="row">

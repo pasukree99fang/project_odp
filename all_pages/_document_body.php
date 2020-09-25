@@ -7,7 +7,7 @@
 
 <div class="row">
 <div class="col-md-12">
-          <div class="box box-warning">
+          <div class="box box-info">
             <div class="box-header with-border">
               <h3 class="box-title">Document</h3>
 
@@ -25,7 +25,7 @@
                     <th width="100"> <div align="center">Files ID </div></th>
                     <th width="150"> <div align="center">Document Title </div></th>
                     <th width="150"> <div align="center">Files Name </div></th>
-                    <th width="150"> <div align="center">... </div></th>
+                    <th width="150"> <div align="center">Apply </div></th>
                 </tr>
                 <?php $i=1;
                     while($objResult = mysqli_fetch_array($objQuery))

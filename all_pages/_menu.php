@@ -132,7 +132,7 @@
           <img src="dist/img/doggy.jpg" class="img-circle" alt="User Image">
         </div>
         <div class="pull-left info">
-          <p><?php echo $_SESSION['us_firstname']; ?> <?php echo $_SESSION['us_lastname']; ?></p>
+          <p><?php echo $_SESSION['us_firstname']; ?> <?php echo $_SESSION['us_lastname']; ?> </p>
           <a href="#"><i class="fa fa-circle text-success"></i> Online</a>
         </div>
       </div>
@@ -151,7 +151,7 @@
             </span>
           </a>
           <ul class="treeview-menu">
-            <li><a href="_status_all.php"><i class="fa fa-circle-o text-red"></i> Not Approved</a></li>
+            <li><a href="_status_all.php"><i class="fa fa-circle-o text-aqua"></i> All</a></li>
             <li><a href="_status_pending.php"><i class="fa fa-circle-o text-yellow"></i> Pending</a></li>
             <li><a href="_status_approved.php"><i class="fa fa-circle-o text-green"></i> Approved</a></li>
           </ul>
@@ -177,6 +177,7 @@
 
         <?php if($_SESSION['us_isadmin']=='yes'){ ?>
         <li class="header">FOR ADMIN</li>
+        <li><a href="_all_organization_architecture.php"><i class="fa fa-pie-chart"></i> <span>All Organization Architecture</span></a></li>
         <li><a href="_alluser.php"><i class="fa fa-book"></i> <span>All User</span></a></li>
         <li><a href="_alldocument.php"><i class="fa fa-files-o"></i> <span>All Document</span></a></li>
         <li><a href="_edit_approval.php"><i class="fa fa-laptop"></i> <span>Edit Approval</span></a></li>
