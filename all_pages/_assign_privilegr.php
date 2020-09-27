@@ -12,7 +12,9 @@
     <?php include '_menu.php'; ?>
     <div class="content-wrapper">
       <section class="content">
+      <form role="form" action="_manageassign_privilegr.php" method="post">
         <?php include '_assign_privilegr_body.php'; ?>
+      </form>  
       </section>
     </div>
 

@@ -5,7 +5,18 @@
         <div class="col-md-12">
             <div class="box box-info">
                     <div class="box-header with-border">
-                        <h3 class="box-title">Create Organization </h3>
+                        <h3 class="box-title">Create Position </h3>
+
+                        <div class="btn-group pull-right">
+                            <button type="button" class="btn btn-info dropdown-toggle" data-toggle="dropdown">
+                                <span class="caret"></span>
+                            </button>
+                            <ul class="dropdown-menu">
+                                <li><a href="_createdepartment.php">Create Department</a></li>
+                                <li><a href="_createsubdepartment.php">Create Sub department</a></li>
+                                <li><a href="_createposition.php">Create Position</a></li>
+                            </ul>
+                        </div>
                     </div>
 
                     <!-- DB tb_company -->
@@ -29,41 +40,21 @@
                                 </div>
                             </div>    
 
-                            <div class="row">
-                                <!-- <div class="col-md-6">
-                                    <div class="form-group">
-                                        <label for="exampleInputEmail1">Department</label>
-                                        <input type="username" class="form-control" id="CreateDepartment" name="CreateDepartment" placeholder="Enter Department">
-                                    </div>
-                                </div> -->
-
-                                <!-- <div class="col-md-6">
-                                    <div class="input-group">
-                                    <label for="exampleInputEmail1">Department   </label>
-                                        <input class="form-control" placeholder="Type message...">
-
-                                        <div class="input-group-btn">
-                                        <button type="button" class="btn btn-success"><i class="fa fa-plus"></i></button>
-                                        </div>
-                                    </div>
-                                </div> -->
-                            </div>
-
-                            <div class="row">
-                                <div class="col-md-6">
-                                    <div class="form-group">
-                                        <label for="exampleInputEmail1">Department</label>
-                                        <input type="text" class="form-control" id="CreateDepartment" name="CreateDepartment" placeholder="Enter Department">
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="row">
-                                <div class="col-md-6">
-                                    <div class="form-group">
-                                        <label for="exampleInputEmail1">Sub Department</label>
-                                        <input type="text" class="form-control" id="CreateSub" name="CreateSub" placeholder="Enter Sub Department">
-                                    </div>
+                            <div class="col-md-4">
+                                <div class="form-group">
+                                    <label>Sub Department</label>
+                                    <?php
+                                        $strSQL3 = "SELECT * FROM tb_sub_department";
+                                        $objQuery3 = mysqli_query($mysqli,$strSQL3);
+                                    ?>
+                                    <select class="form-control select2" style="width: 100%;" name="sub_dpm">
+                                        <option selected="selected">Choose Sub Department</option>
+                                        <?php
+                                            while($objResult3 = mysqli_fetch_array($objQuery3))
+                                            { ?>
+                                            <option value="<?php echo $objResult3['sub_id']; ?>"><?php echo $objResult3['sub_name']; ?></option>
+                                        <?php } ?>
+                                    </select>
                                 </div>
                             </div>
 
@@ -75,7 +66,6 @@
                                     </div>
                                 </div>
                             </div>
-
 
                         </div>
 

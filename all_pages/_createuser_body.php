@@ -176,7 +176,7 @@
                                 <div class="col-md-4">
                                     <div class="checkbox">
                                         <label for="chkmanager">
-                                            <input type="checkbox" id="chkmanager">
+                                            <input type="checkbox" id="chkmanager" name="chkmanager" value="1">
                                             Checkbox in case of user who is manager
                                         </label>
                                     </div>

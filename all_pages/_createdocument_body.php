@@ -34,11 +34,11 @@
           <div class="row">
             <div class="col-md-6">
             <label>Click Text to add text.</label><br>
-              <input class="btn btn-default form-control"type=button name="adminBtn" value="TEXT" onclick="displayForm()"><br><br>
+              <input class="btn btn-default form-control"type=button name="usetextbox" value="TEXT" onclick="displayForm()"><br><br>
             </div>
 
             <div class="col-md-4">
-              <div id="pwdForm"></div>
+              <div id="textbox"></div>
             </div>
           </div>
         </div>
@@ -47,7 +47,7 @@
           <div class="row">
             <div class="col-md-6">
             <label>Click File to add files.</label><br>
-              <input class="btn btn-default form-control"type=button name="adminBtn" value="FILE" onclick="displayForm()"><br><br>
+              <input class="btn btn-default form-control"type=button name="useupfile" value="FILE" onclick="displayForm()"><br><br>
             </div>
 
             <div class="col-md-4">
@@ -55,6 +55,10 @@
             </div>
           </div>
         </div>
+      
+        
+
+                    
 
         <!-- <div class="box-body">
           <div class="row">

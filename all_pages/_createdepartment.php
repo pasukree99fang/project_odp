@@ -12,9 +12,9 @@
     <?php include '_menu.php'; ?>
     <div class="content-wrapper">
       <section class="content">
-      <form role="form" action="_manageedit_profile.php" method="post">
-        <?php include '_edit_profile_body.php'; ?>
-      </form>  
+      <form role="form" action="_managecreate_department.php" method="post">
+        <?php include '_createdepartment_body.php'; ?>
+      </form>
       </section>
     </div>
 

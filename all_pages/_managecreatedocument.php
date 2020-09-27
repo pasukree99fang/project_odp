@@ -1,6 +1,10 @@
 <?php 
 	session_start();
- 	include 'connectdb.php'; 
+	 include 'connectdb.php'; 
+	 
+	$thisPwd = $_POST["myText"];
+	echo "รหัสที่ท่านพิมพ์คือ : $thisPwd <br>";
+	
     if(move_uploaded_file($_FILES["inputfile"]["tmp_name"],"file/".$_FILES["inputfile"]["name"])){
     	echo "Document title ".$inputEmail3=$_POST['inputEmail3'];
     	echo "<br>";
@@ -30,5 +34,6 @@
         $query2=mysqli_query($mysqli, $sql2);
 
         echo "<script>alert('Upload File Complete'); window.location.href='_createdocument.php';</script>";
-    }
+	}
+	
 ?>

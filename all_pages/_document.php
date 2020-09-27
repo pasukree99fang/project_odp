@@ -12,7 +12,9 @@
     <?php include '_menu.php'; ?>
     <div class="content-wrapper">
       <section class="content">
+      <form role="form" action="_managedocument.php" method="post">
         <?php include '_document_body.php'; ?>
+      </form>
       </section>
     </div>
 

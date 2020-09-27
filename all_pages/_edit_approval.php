@@ -12,7 +12,9 @@
     <?php include '_menu.php'; ?>
     <div class="content-wrapper">
       <section class="content">
+      <form role="form" action="_manageedit_approval.php" method="post">
         <?php include '_edit_approval_body.php'; ?>
+      </form>  
       </section>
     </div>
 

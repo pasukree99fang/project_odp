@@ -64,12 +64,12 @@
           
           <li class="dropdown user user-menu">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-              <img src="dist/img/doggy.jpg" class="user-image" alt="User Image">
+              <img src="file/pasu.jpg" class="user-image" alt="User Image">
               <span class="hidden-xs"><?php echo $_SESSION['us_firstname']; ?> <?php echo $_SESSION['us_lastname']; ?></span>
             </a>
             <ul class="dropdown-menu">
               <li class="user-header">
-                <img src="dist/img/doggy.jpg" class="img-circle" alt="User Image">
+                <img src="file/pasu.jpg" class="img-circle" alt="User Image">
 
 
                 <!-- DB1 tb_position -->
@@ -129,7 +129,7 @@
     <section class="sidebar">
       <div class="user-panel">
         <div class="pull-left image">
-          <img src="dist/img/doggy.jpg" class="img-circle" alt="User Image">
+          <img src="file/pasu.jpg" class="img-circle" alt="User Image">
         </div>
         <div class="pull-left info">
           <p><?php echo $_SESSION['us_firstname']; ?> <?php echo $_SESSION['us_lastname']; ?> </p>
@@ -190,7 +190,7 @@
               </span>
             </a>
           <ul class="treeview-menu">
-            <li><a href="_createorganization.php"><i class="fa fa-share"></i> Organization Architecture</a></li>
+            <li><a href="_createdepartment.php"><i class="fa fa-share"></i> Organization Architecture</a></li>
             <li><a href="_createuser.php"><i class="fa fa-share"></i> User</a></li>
             <li><a href="_createdocument.php"><i class="fa fa-share"></i> Document</a></li>9
           </ul>

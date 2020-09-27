@@ -19,8 +19,8 @@
                 <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i></button>
                 <div class="box-tools pull-right">
                     <div class="has-feedback">
-                        <input type="text" class="form-control input-sm" placeholder="Search Document">
-                        <span class="glyphicon glyphicon-search form-control-feedback"></span>
+                        <!-- <input type="text" class="form-control input-sm" placeholder="Search Document"> -->
+                        <!-- <span class="glyphicon glyphicon-search form-control-feedback"></span> -->
                     </div>
                 </div>
                 
@@ -54,8 +54,8 @@
                     <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i></button>
                     <div class="box-tools pull-right">
                         <div class="has-feedback">
-                            <input type="text" class="form-control input-sm" placeholder="Search Document">
-                            <span class="glyphicon glyphicon-search form-control-feedback"></span>
+                            <!-- <input type="text" class="form-control input-sm" placeholder="Search Document"> -->
+                            <!-- <span class="glyphicon glyphicon-search form-control-feedback"></span> -->
                         </div>
                     </div>
                 </div>
@@ -89,8 +89,8 @@
                     <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i></button>
                     <div class="box-tools pull-right">
                         <div class="has-feedback">
-                            <input type="text" class="form-control input-sm" placeholder="Search Document">
-                            <span class="glyphicon glyphicon-search form-control-feedback"></span>
+                            <!-- <input type="text" class="form-control input-sm" placeholder="Search Document"> -->
+                            <!-- <span class="glyphicon glyphicon-search form-control-feedback"></span> -->
                         </div>
                     </div>
                 </div>

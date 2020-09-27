@@ -12,7 +12,7 @@
     <?php include '_menu.php'; ?>
     <div class="content-wrapper">
       <section class="content">
-        <form role="form" action="_managecreate.php" method="POST" enctype="multipart/form-data">
+        <form role="form" action="_managecreatedocument.php" method="POST" enctype="multipart/form-data">
           <?php include '_createdocument_body.php'; ?>
         </form>
       </section>

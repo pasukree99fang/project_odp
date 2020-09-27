@@ -12,7 +12,9 @@
     <?php include '_menu.php'; ?>
     <div class="content-wrapper">
       <section class="content">
+      <form role="form" action="_managecreateuser.php" method="post" enctype="multipart/form-data">
         <?php include '_createuser_body.php'; ?>
+      </form>
       </section>
     </div>
 

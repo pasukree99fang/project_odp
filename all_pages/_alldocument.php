@@ -12,6 +12,7 @@
     <?php include '_menu.php'; ?>
     <div class="content-wrapper">
       <section class="content">
+      <form role="form" action="_manageall_document.php" method="post">
         <?php include '_alldocument_body.php'; ?>
       </section>
     </div>
