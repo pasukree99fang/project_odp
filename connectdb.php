@@ -1,5 +1,5 @@
 <?php
-$mysqli = new mysqli("db-odp.mysql.database.azure.com","adminodp@db-odp","odpsit26.","db-odp");
+$mysqli = new mysqli("db-odp.mysql.database.azure.com","adminodp@db-odp","odpsit26.","odp");
 
 // "db-odp.mysql.database.azure.com","adminodp@db-odp","60admin.","odp"
 // Check connection
