@@ -1,5 +1,6 @@
 <?php
-$mysqli = new mysqli("localhost","root","","odp");
+$mysqli = new mysqli("db-odp.mysql.database.azure.com","adminodp@db-odp","odpsit26.","odp");
+
 // "db-odp.mysql.database.azure.com","adminodp@db-odp","60admin.","odp"
 // Check connection
 if ($mysqli -> connect_errno) {
