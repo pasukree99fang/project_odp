@@ -1,18 +1,16 @@
 <?php 
 	session_start();
-	 include 'connectdb.php'; 
-	 
-	$thisPwd = $_POST["myText"];
-	echo "รหัสที่ท่านพิมพ์คือ : $thisPwd <br>";
-	 
-    if(move_uploaded_file($_FILES["inputfile"]["tmp_name"],"file/".$_FILES["inputfile"]["name"])){
+ 	include 'connectdb.php'; 
+    if(move_uploaded_file($_FILES["f"]["tmp_name"],"file/".$_FILES["f"]["name"])){
     	echo "Document title ".$inputEmail3=$_POST['inputEmail3'];
     	echo "<br>";
     	echo "File input ".$file_input=$_FILES["inputfile"]["name"];
     	echo "<br>";
     	echo "Step number of approval ".$stepnum=$_POST['stepnum'];
-    	echo "<br>";
-
+		echo "<br>";
+		
+//add for try can delete later
+		echo "Text input".$textInput=$_post['myText'];
     	echo "Department ".$dpm=$_POST['dpm'];
     	echo "<br>";
     	echo "Sub Department ".$sub_dpm=$_POST['sub_dpm']; 
@@ -27,13 +25,12 @@
         echo $us_username=$res['us_username'];
 
 
-        $sql="INSERT INTO tb_form_element (ele_title,ele_version_id) VALUES ('$inputEmail3','".$_FILES["inputfile"]["name"]."')";
+        $sql="INSERT INTO tb_form_element (ele_title,ele_version_id) VALUES ('$inputEmail3','".$_FILES["f"]["name"]."')";
         $query=mysqli_query($mysqli, $sql);
 
         $sql2="INSERT INTO tb_step_approver (sapp_form_id,sapp_approver_id,sapp_level) VALUES ('$inputEmail3','$us_username','$stepnum')";
         $query2=mysqli_query($mysqli, $sql2);
 
         echo "<script>alert('Upload File Complete'); window.location.href='_createdocument.php';</script>";
-	}
-	
+    }
 ?>

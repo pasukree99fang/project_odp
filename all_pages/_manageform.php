@@ -1,8 +1,30 @@
 <script language="javascript" type="text/javascript">
-            function displayForm(){
+            function displayTextForm(){
                 var d=document;
-                var test_div = document.getElementById('textbox');
-                document.getElementById('textbox').innerHTML="เพิ่มเนื้อหาคำร้อง :";
+                var test_div = document.getElementById('pwdForm');
+                document.getElementById('pwdForm').innerHTML="เพิ่มเนื้อหาคำร้อง :";
+                var f = test_div.appendChild(d.createElement('form'));
+                var i=d.createElement('input');
+                var i2=i.cloneNode(false);
+                var br=d.createElement('br');
+                f.action='adminForm.php';
+                f.method='POST';
+                f.name='f';
+                i.type='text';
+                i.name='myText';
+                i.value='';
+                i2.type='submit';
+                i2.value=' บันทึกข้อมูล ';
+                f.appendChild(i);
+                f.appendChild(br);
+                f.appendChild(i2);
+                document.getElementsByName("adminBtn")[0].disabled = true;
+            }
+            
+            function displayFileForm(){
+                var d=document;
+                var test_div = document.getElementById('pd');
+                document.getElementById('pd').innerHTML="เพิ่มเนื้อหาคำร้อง :";
                 var f = test_div.appendChild(d.createElement('form'));
                 var i=d.createElement('input');
                 var i2=i.cloneNode(false);
@@ -10,16 +32,17 @@
                 f.action='_managecreatedocument.php';
                 f.method='POST';
                 f.name='f';
-                i.type='text';
-                i.name='myText';
+                i.type='file';
+                i.name='myFile';
                 i.value='';
-                i2.type='submit';
+                // i2.type='submit';
                 // i2.value=' บันทึกข้อมูล ';
                 f.appendChild(i);
-                f.appendChild(br); 
+                f.appendChild(br);
                 f.appendChild(i2);
-                document.getElementsByName("usetextbox")[0].disabled = true;
+                document.getElementsByName("adminBtn")[0].disabled = true;
             }
 
-            
+
+
 </script>

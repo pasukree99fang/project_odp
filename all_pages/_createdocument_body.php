@@ -11,14 +11,13 @@
 
         <?php include '_manageform.php'; ?>
 
-        <div class="box-body">
+      <div class="box-body">
           <div class="row">
             <div class="col-md-6">
-              <div class="form-group">
-                <label>Document title</label>
+              <div class="form-group ">
+                <label>Document Title </label>
                     <input type="text" class="form-control" id="inputEmail3" name="inputEmail3" placeholder="Enter Document title">
               </div>
-            </div>
 
             <!-- <div class="col-md-4">
             <div class="form-group">
@@ -27,39 +26,138 @@
                   <p class="help-block">Choose file to set permissions.</p>
                 </div>
             </div> -->
+            </div>
           </div>
-        </div>
         
         <div class="box-body">
-          <div class="row">
-            <div class="col-md-6">
-            <label>Click Text to add text.</label><br>
-              <input class="btn btn-default form-control"type=button name="usetextbox" value="TEXT" onclick="displayForm()"><br><br>
+            <div class="row">
+              <div class="alert alert-warning alert-dismissible">
+                    <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+                    <h4><i class="icon fa fa-warning"></i> Note!</h4>
+                    Pleas click on button to add tools in your document!!
+              </div>
+              <div class="col-md-4">
+                <a class="btn btn-app" type=button name="adminBtn" value="+" onclick="displayTextForm()">
+                  <i class="fa fa-text-width"></i> 
+                  <label>Text</label>
+              </a>
+              </div>
+
+              <div class="col-md-4">
+                <div id="pwdForm"></div>
+              </div>
+            </div>
+        </div>
+          
+
+            <div class="box-body">
+              <div class="row">
+                <div class="col-md-3" style="align:center">
+                    <a class="btn btn-app" type=button name="adminBtn" value="FILE" onclick="displayFileForm()">
+                    <i class="fa fa-upload"></i> 
+                    <label>File upload </label>
+                    </a>
+                </div>             
+          
+                <div class="col-md-4">    
+                    <div id="pd"></div>
+                </div>
+              </div>
             </div>
 
-            <div class="col-md-4">
-              <div id="textbox"></div>
-            </div>
+        
+      <div class="box-body">
+          <div class="row">
+            <div class="col-md-3" style="align:center">
+            <a class="btn btn-app" type=button name="adminBtn" value="FILE" onclick="displayForm()">
+                <i class="fa fa-check-square"></i> 
+              <label>Checkbox</label>
+              </a>
           </div>
         </div>
+      </div>
 
         <div class="box-body">
           <div class="row">
-            <div class="col-md-6">
-            <label>Click File to add files.</label><br>
-              <input class="btn btn-default form-control"type=button name="useupfile" value="FILE" onclick="displayForm()"><br><br>
-            </div>
+            <div class="col-md-4" style="align:center">
+              <a class="btn btn-app" type=button name="adminBtn" value="FILE" onclick="displayForm()">
+                <i class="fa fa-dot-circle-o"></i> 
+              <label>Radio Button</label>
+              </a>
+          </div>
+        </div>
+</div>
 
-            <div class="col-md-4">
-              <div id="pwdForm"></div>
+<div class="box-body">
+          <div class="row">
+            <div class="col-md-6">
+              <div class="form-group">
+                <label>Step number of approval</label>
+                <select class="form-control select2" style="width: 100%;" name="stepnum">
+                  <option selected="selected">Choose Number</option>
+                  <option value="1">1</option>
+                </select>
+              </div>
             </div>
           </div>
         </div>
-      
-        
 
-                    
-
+        <!-- /.box-header -->
+        <div class="box-body">
+          <div class="row">
+            <div class="col-md-4">
+              <div class="form-group">
+                <label>Department</label>
+                <?php
+                  $strSQL2 = "SELECT * FROM tb_department";
+                  $objQuery2 = mysqli_query($mysqli,$strSQL2);
+                ?>
+                <select class="form-control select2" style="width: 100%;" name="dpm">
+                  <option selected="selected">Choose Department</option>
+                  <?php
+                    while($objResult2 = mysqli_fetch_array($objQuery2))
+                    { ?>
+                  <option value="<?php echo $objResult2['dpm_id']; ?>"><?php echo $objResult2['dpm_name']; ?></option>
+                  <?php } ?>
+                </select>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="form-group">
+                <label>Sub Department</label>
+                <?php
+                  $strSQL3 = "SELECT * FROM tb_sub_department";
+                  $objQuery3 = mysqli_query($mysqli,$strSQL3);
+                ?>
+                <select class="form-control select2" style="width: 100%;" name="sub_dpm">
+                  <option selected="selected">Choose Sub Department</option>
+                  <?php
+                    while($objResult3 = mysqli_fetch_array($objQuery3))
+                    { ?>
+                  <option value="<?php echo $objResult3['sub_id']; ?>"><?php echo $objResult3['sub_name']; ?></option>
+                  <?php } ?>
+                </select>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="form-group">
+                <label>Position</label>
+                <?php
+                  $strSQL = "SELECT * FROM tb_position";
+                  $objQuery = mysqli_query($mysqli,$strSQL);
+                ?>
+                <select class="form-control select2" style="width: 100%;" name="pos">
+                  <option selected="selected">Choose Position</option>
+                  <?php
+                    while($objResult = mysqli_fetch_array($objQuery))
+                    { ?>
+                  <option value="<?php echo $objResult['pst_id'] ?>"><?php echo $objResult['pst_name']; ?></option>
+                  <?php } ?>
+                </select>
+              </div>
+            </div>
+          </div>
+        </div>
         <!-- <div class="box-body">
           <div class="row">
             <div class="col-md-6">
@@ -69,7 +167,7 @@
 
             <div class="col-md-4">
               <div id="pwdForm"></div>
-            </div> 
+            </div>
           </div>
         </div> -->
 
@@ -78,6 +176,8 @@
         </div>
         <div class="box-footer">
                 <!-- <button type="submit" class="btn btn-default"><a href="_createdocument.php">Back</a></button> -->
-                <button type="submit" class="btn btn-default pull-right"><a href="_assign_privilegr.php">Next</a></button>
+                <!-- <button type="submit" class="btn btn-default pull-right"><a href="_assign_privilegr.php">Next</a></button> -->
+                <button type="submit" class="btn btn-info pull-right">Save</button> 
         </div>
+</div>
 </div>
