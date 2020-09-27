@@ -27,7 +27,7 @@ if (isset($_POST['user']) && $_POST['user'] != ""
 		
 	}
 	else if ($_POST['user'] == $objResult['us_username'] && $_POST['pass'] == $objResult['us_password']) {
-		echo "<script>alert('ยินดีต้อนรับ ".$objResult['us_firstname']." ".$objResult['us_lastname']."'); window.location.href='all_pages/_home.php';</script>";
+		echo "<script>alert('ยินดีต้อนรับ ".$_SESSION['us_firstname']." ".$_SESSION['us_lastname']."'); window.location.href='all_pages/_home.php';</script>";
 		
 	}
 
