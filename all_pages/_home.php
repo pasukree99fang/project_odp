@@ -2,7 +2,9 @@
 	session_start();
 	include 'connectdb.php';
 ?> 
-<?php include '_session_login.php' ?>
+<?php 
+// include '_session_login.php' 
+?>
 <!DOCTYPE html>
 <html>
   <head>
