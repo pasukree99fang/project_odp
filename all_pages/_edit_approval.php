@@ -16,7 +16,7 @@
         <?php include '_edit_approval_body.php'; ?>
       </form>  
       </section>
-    </div>
+    </div> 
 
     <?php include '_footer.php'; ?>
     <div class="control-sidebar-bg"></div>

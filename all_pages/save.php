@@ -12,4 +12,4 @@ if(isset($msg_text) ){
 }
 header('Location: send.php');
 
-?>
+?> 

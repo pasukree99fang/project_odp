@@ -11,7 +11,7 @@
                   <div class="input-group-btn">
                     <button type="submit" class="btn btn-default"><i class="fa fa-search"></i></button>
                   </div>
-                </div>
+                </div> 
               </div>
             </div>
             <!-- /.box-header -->

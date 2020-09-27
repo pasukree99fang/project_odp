@@ -11,7 +11,7 @@
             <th width="150"> <div align="center">Files Name </div></th>
             <th width="150"> <div align="center">... </div></th>
         </tr>
-        <?php
+        <?php 
             while($objResult = mysqli_fetch_array($objQuery))
             { ?>
         <tr>

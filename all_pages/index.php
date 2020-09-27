@@ -2,7 +2,7 @@
 <html>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
-<script>
+<script> 
     $(document).ready(function(e) {
         increaseNotify();
         setInterval(increaseNotify, 3000);
@@ -10,7 +10,7 @@
             decreaseNotify()
         })
     });
-
+ 
     function increaseNotify() { // โหลดตัวเลขทั้งหมดที่ถูกส่งมาแสดง
         $.ajax({
             url: "increase.php",

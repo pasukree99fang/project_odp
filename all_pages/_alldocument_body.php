@@ -17,7 +17,7 @@
                   <!-- <span class="glyphicon glyphicon-search form-control-feedback"></span> -->
                 </div>
               </div>
-            </div>
+            </div> 
             <div class="box-body no-padding">
               <div class="table-responsive mailbox-messages">
               <table class="table table-hover table-striped">

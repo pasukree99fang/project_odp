@@ -34,7 +34,7 @@
                 </tr>
                 <?php
                     while($objResult = mysqli_fetch_array($objQuery))
-                    { ?>
+                    { ?> 
                 <tr>
                     <td class="mailbox-name"><div align="center"><?php echo $objResult["us_username"];?></div></td>
                     <td class="mailbox-name"><div align="center"><?php echo $objResult["us_firstname"];?> <?php echo $objResult["us_lastname"];?></div></td>

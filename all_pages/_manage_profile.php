@@ -31,7 +31,7 @@
      echo "<script>alert('Upload File Complete'); window.location.href='_createdocument.php';</script>";
 
 
-
+ 
 	//Working but update all user
 	// $strSQL1 = "SELECT * FROM tb_user ";
   	// $objQuery1 = mysqli_query($mysqli,$strSQL1);

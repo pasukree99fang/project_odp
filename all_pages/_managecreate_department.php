@@ -7,7 +7,7 @@
         echo "Company ".$cpn_name=$_POST['cpn_name'];
         echo "Create Department ".$CreateDepartment=$_POST['CreateDepartment'];
 
-                // $DB1 = "SELECT cpn_id, cpn_name FROM tb_company
+                // $DB1 = "SELECT cpn_id, cpn_name FROM tb_company 
                 // WHERE cpn_name ='$cpn_name'";
                 // $objQuery1 = mysqli_query($mysqli,$DB1);
                 // $objResult1 = mysqli_fetch_array($objQuery1,MYSQLI_ASSOC);

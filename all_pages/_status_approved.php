@@ -13,7 +13,7 @@
     <div class="content-wrapper">
       <section class="content">
         <?php include '_status_Approve_body.php'; ?>
-      </section>
+      </section> 
     </div>
 
     <?php include '_footer.php'; ?>

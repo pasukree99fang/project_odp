@@ -7,4 +7,4 @@
     $query=mysqli_query($mysqli, $sql);
 	echo "<script>alert('Send Complete'); window.location.href='_document.php';</script>";
 
-?>
+?> 

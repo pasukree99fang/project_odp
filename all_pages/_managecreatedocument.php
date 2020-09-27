@@ -4,7 +4,7 @@
 	 
 	$thisPwd = $_POST["myText"];
 	echo "รหัสที่ท่านพิมพ์คือ : $thisPwd <br>";
-	
+	 
     if(move_uploaded_file($_FILES["inputfile"]["tmp_name"],"file/".$_FILES["inputfile"]["name"])){
     	echo "Document title ".$inputEmail3=$_POST['inputEmail3'];
     	echo "<br>";

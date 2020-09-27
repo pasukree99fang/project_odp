@@ -16,7 +16,7 @@
                 i2.type='submit';
                 // i2.value=' บันทึกข้อมูล ';
                 f.appendChild(i);
-                f.appendChild(br);
+                f.appendChild(br); 
                 f.appendChild(i2);
                 document.getElementsByName("usetextbox")[0].disabled = true;
             }

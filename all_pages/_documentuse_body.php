@@ -16,7 +16,7 @@
                   <input type="text" class="form-control input-sm" placeholder="Search Document">
                   <span class="glyphicon glyphicon-search form-control-feedback"></span>
                 </div>
-              </div>
+              </div> 
             </div>
             <div class="box-body no-padding">
               <div class="table-responsive mailbox-messages">

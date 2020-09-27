@@ -12,7 +12,7 @@
  $SQL1 = "SELECT cpn_name FROM tb_company join tb_user on tb_company.cpn_id = tb_user.us_company_id"; 
 	$objQuery1 = mysqli_query($mysqli,$SQL1);
   $objResult1 = mysqli_fetch_array($objQuery1,MYSQLI_ASSOC);  ?>
-
+ 
  <!-- DB1 tb_position -->
  <?php $SQL1 = "SELECT a.us_id, a.us_username, a.us_firstname, 
                 b.afft_id, b.afft_user_id, b.afft_sub_department_id,

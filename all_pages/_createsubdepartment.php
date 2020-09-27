@@ -20,7 +20,7 @@
 
     <?php include '_footer.php'; ?>
     <div class="control-sidebar-bg"></div>
-
+ 
   </div>
   <?php include '_script.php'; ?>
 </body>

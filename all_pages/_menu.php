@@ -91,7 +91,7 @@
                 WHERE us_username = '".$_SESSION['us_username']."'";
                 $objQuery2 = mysqli_query($mysqli,$SQL2);
                 $objResult2 = mysqli_fetch_array($objQuery2,MYSQLI_ASSOC); ?> 
-
+ 
                 <!-- DB3 tb_sub_department -->
                 <?php $SQL3 = "SELECT a.us_id, a.us_username, a.us_firstname, 
                 b.afft_id, b.afft_user_id, b.afft_sub_department_id,

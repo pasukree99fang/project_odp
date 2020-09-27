@@ -10,7 +10,7 @@
 <body class="hold-transition skin-blue sidebar-mini">
   <div class="wrapper">
     <?php include '_menu.php'; ?>
-    <div class="content-wrapper">
+    <div class="content-wrapper"> 
       <section class="content">
         <form role="form" action="_managecreatedocument.php" method="POST" enctype="multipart/form-data">
           <?php include '_createdocument_body.php'; ?>

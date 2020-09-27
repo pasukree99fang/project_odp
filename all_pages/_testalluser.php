@@ -10,7 +10,7 @@
                   $queryuser = mysqli_query($mysqli,$sqluser);
                   $resultuser = mysqli_fetch_array($queryuser,MYSQLI_ASSOC);
                   do{ ?>
-                  <tr>
+                  <tr> 
                     <td><input type="checkbox"></td>
                     <td class="mailbox-star"><a href="#"><i class="fa fa-star text-yellow"></i></a></td>
                     <td class="mailbox-name"><a href="read-mail.html"><?php echo $resultuser['us_firstname'];//echo $resultuser['us_lastname'];?></a></td>

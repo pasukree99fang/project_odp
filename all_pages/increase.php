@@ -8,6 +8,6 @@ $result_increase = mysqli_query($mysqli, "SELECT member_token FROM tb_notificati
 $badge_number = mysqli_num_rows($result_increase);
 $data = array(
 	'badge_number' => $badge_number
-);
+); 
 echo json_encode($data);
 ?>

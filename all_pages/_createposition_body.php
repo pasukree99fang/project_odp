@@ -55,7 +55,7 @@
                                             <option value="<?php echo $objResult3['sub_id']; ?>"><?php echo $objResult3['sub_name']; ?></option>
                                         <?php } ?>
                                     </select>
-                                </div>
+                                </div> 
                             </div>
 
                             <div class="row">

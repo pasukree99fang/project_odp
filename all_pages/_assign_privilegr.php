@@ -5,7 +5,7 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <title>2YOU</title>
-  <?php include '_plugin.php'; ?>
+  <?php include '_plugin.php'; ?> 
 </head>
 <body class="hold-transition skin-blue sidebar-mini">
   <div class="wrapper">

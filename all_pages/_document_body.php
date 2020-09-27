@@ -21,7 +21,7 @@
             <div class="box-body no-padding">
               <div class="table-responsive mailbox-messages">
               <table class="table table-hover table-striped">
-                <tr>
+                <tr> 
                     <!-- <th width="100"> <div align="center">Files ID </div></th> -->
                     <th width="150"> <div align="center">Document Title </div></th>
                     <!-- <th width="150"> <div align="center">Files Name </div></th> -->

@@ -15,7 +15,7 @@
         <?php include '_profile_body.php'; ?>
       </section>
     </div>
-
+ 
     <?php include '_footer.php'; ?>
     <div class="control-sidebar-bg"></div>
 

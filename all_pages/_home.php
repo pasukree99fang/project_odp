@@ -14,7 +14,7 @@
         <section class="content">
           <?php include '_home_body.php'; ?>
         </section>
-      </div>
+      </div> 
 
       <?php include '_footer.php'; ?>
       <div class="control-sidebar-bg"></div>

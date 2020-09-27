@@ -37,7 +37,7 @@
                   <td>11-7-2014</td>
                   <td><span class="label label-warning">Pending</span></td>
                   <td>Bacon ipsum dolor sit amet salami venison chicken flank fatback doner.</td>
-                </tr>
+                </tr> 
                 <tr>
                   <td>657</td>
                   <td>Bob Doe</td>

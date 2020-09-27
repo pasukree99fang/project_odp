@@ -25,7 +25,7 @@
                         <h3>Profile</i>
           <a href="_edit_profile.php"> <button type="button" class="btn btn-info btn-flat pull-right"> Edit </button></a>
           <h2 class="page-header"></h2>
-
+ 
           <!-- Main content -->
           <!-- <small class="pull-right">Date: 2/10/2014</small> -->
       <!-- /.col -->

@@ -57,7 +57,7 @@
                                         <button type="button" class="btn btn-success"><i class="fa fa-plus"></i></button>
                                         </div>
                                     </div>
-                                </div>
+                                </div> 
                             </div> -->
 
                             <div class="row">

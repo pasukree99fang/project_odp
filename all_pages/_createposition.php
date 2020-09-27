@@ -14,7 +14,7 @@
       <section class="content">
       <form role="form" action="_managecreate_position.php" method="post">
         <?php include '_createposition_body.php'; ?>
-      </form>
+      </form> 
       </section>
     </div>
 

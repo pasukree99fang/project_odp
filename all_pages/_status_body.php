@@ -8,7 +8,7 @@
         include 'connectdb.php';
 
 ?>
-</head>
+</head> 
 <body>
 <div class="row">
         <div class="col-xs-12">

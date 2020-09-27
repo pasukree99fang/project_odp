@@ -2,7 +2,7 @@
 	session_start();
     include 'connectdb.php'; 
 ?>
-
+ 
 <?php         
         echo "Department ".$dpm=$_POST['dpm'];
     	echo "Create Sub Department".$CreateSub=$_POST['CreateSub']; 

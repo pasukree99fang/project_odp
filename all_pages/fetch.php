@@ -10,7 +10,7 @@ $Query = "SELECT * FROM tb_notification ORDER BY noti_id DESC LIMIT 15";
 $Result = Mysqli_query($mysqli, $Query);
 $Output = '';
 If(Mysqli_num_rows($Result) > 0)
-{
+{ 
 While($Row = Mysqli_fetch_array($Result))
 {
   $Output .= '

@@ -63,7 +63,7 @@
               <div class="form-group">
                 <label>Sub Department</label>
                 <?php
-                  $strSQL3 = "SELECT * FROM tb_sub_department";
+                  $strSQL3 = "SELECT * FROM tb_sub_department"; 
                   $objQuery3 = mysqli_query($mysqli,$strSQL3);
                 ?>
                 <select class="form-control select2" style="width: 100%;" name="sub_dpm">

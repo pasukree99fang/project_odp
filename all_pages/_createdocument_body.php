@@ -69,7 +69,7 @@
 
             <div class="col-md-4">
               <div id="pwdForm"></div>
-            </div>
+            </div> 
           </div>
         </div> -->
 

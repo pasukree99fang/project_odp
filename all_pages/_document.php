@@ -15,7 +15,7 @@
       <form role="form" action="_managedocument.php" method="post">
         <?php include '_document_body.php'; ?>
       </form>
-      </section>
+      </section> 
     </div>
 
     <?php include '_footer.php'; ?>

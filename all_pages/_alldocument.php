@@ -9,7 +9,7 @@
 </head>
 <body class="hold-transition skin-blue sidebar-mini">
   <div class="wrapper">
-    <?php include '_menu.php'; ?>
+    <?php include '_menu.php'; ?> 
     <div class="content-wrapper">
       <section class="content">
       <form role="form" action="_manageall_document.php" method="post">

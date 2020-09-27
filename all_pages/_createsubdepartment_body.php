@@ -54,7 +54,7 @@
                                             { ?>
                                             <option value="<?php echo $objResult2['dpm_id']; ?>"><?php echo $objResult2['dpm_name']; ?></option>
                                         <?php } ?>
-                                    </select>
+                                    </select> 
                                 </div>
                             </div>
 

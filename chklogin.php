@@ -3,7 +3,7 @@ session_start();
 include 'connectdb.php';
 if (isset($_POST['user']) && $_POST['user'] != ""
 	&& isset($_POST['pass']) && $_POST['pass'] != "") {
-
+ 
 	$SQL = "SELECT * FROM tb_user WHERE us_username = '".$_POST['user']."'
 	and us_password = '".$_POST['pass']."'"; 
 	$objQuery = mysqli_query($mysqli,$SQL);
