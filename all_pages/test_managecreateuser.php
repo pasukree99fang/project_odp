@@ -71,7 +71,7 @@ $sql1="INSERT INTO tb_user (us_username, us_password, us_firstname, us_lastname,
 VALUES ('$UsernameUser','$PasswordUser','$FirstnameUser','$LastnameUser','$EmailUser','$PasswordForApprove','$ManagerUser',
 '$chkmanager','$IsAdminUser','$IsApprovalUser','$cpn_id','$file_input')";
 $query=mysqli_query($mysqli, $sql1);
-// echo $sql1;
-echo "<script>alert('Save Data Complete'); window.location.href='_createuser.php';</script>";  
-}else echo "<script>alert('Please enter data completely'); window.location.href='_createuser.php';</script>";
+echo $sql1;
+//echo "<script>alert('Save Data Complete'); window.location.href='_createuser.php';</script>";  
+}//else echo "<script>alert('กฟน่้ร่นรกฟ'); window.location.href='_createuser.php';</script>";
 ?>

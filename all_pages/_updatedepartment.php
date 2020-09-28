@@ -8,13 +8,13 @@
   <?php include '_plugin.php'; ?>
 </head>
 <body class="hold-transition skin-blue sidebar-mini">
-  <div class="wrapper"> 
-    <?php include '_menu.php'; ?>
+  <div class="wrapper">
+    <?php include '_menu.php'; ?> 
     <div class="content-wrapper">
       <section class="content">
-      <!-- <form role="form" action="_manageall_user.php" method="post"> -->
-        <?php include '_alluser_body.php'; ?>
-      <!-- </section> -->
+      <form role="form" action="_manage_editall_department.php" method="post">
+        <?php include '_updatedepartment_body.php'; ?>
+      </section>
     </div>
 
     <?php include '_footer.php'; ?>

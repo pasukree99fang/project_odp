@@ -34,7 +34,7 @@
                     <td class="mailbox-name"><div align="center"><?php echo $objResult["us_username"];?></div></td>
                     <td class="mailbox-name"><div align="center"><?php echo $objResult["us_firstname"];?> <?php echo $objResult["us_lastname"];?></div></td>
                     <td class="mailbox-name"><div align="center"><?php echo $objResult["us_isapproval"];?></div></td>
-                    <td><div align="center"><button type="button" class="btn btn-info btn-flat">Edit!</button></div></td>
+                    <td><div align="center"><a href="_manageeditapproval.php?ususername=<?php echo $objResult["us_username"]; ?>"><button type="button" class="btn btn-info btn-flat">Edit!</button></a></div></td>
                 </tr>
                 <?php } ?>
               </table>

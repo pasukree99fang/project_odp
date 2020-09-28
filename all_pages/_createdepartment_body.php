@@ -8,15 +8,26 @@
                         <h3 class="box-title">Create Department </h3>
 
                         <div class="btn-group pull-right">
-                            <button type="button" class="btn btn-info dropdown-toggle" data-toggle="dropdown">
+                            <button type="button" class="btn btn-info dropdown-toggle" data-toggle="dropdown">Create Department 
                                 <span class="caret"></span>
                             </button>
                             <ul class="dropdown-menu">
                                 <li><a href="_createdepartment.php">Create Department</a></li>
                                 <li><a href="_createsubdepartment.php">Create Sub department</a></li>
                                 <li><a href="_createposition.php">Create Position</a></li>
-                            </ul>
+                            </ul> 
                         </div>
+
+                        <!-- <div class="btn-group pull-right">
+                            <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">Create Department
+                                <span class="fa fa-caret-down"></span></button>
+                            <ul class="dropdown-menu">
+                                <li><a href="_createdepartment.php">Create Department</a></li>
+                                <li><a href="_createsubdepartment.php">Create Sub department</a></li>
+                                <li><a href="_createposition.php">Create Position</a></li>
+                            </ul>
+                        </div> -->
+
                     </div>
 
                     <!-- DB tb_company -->
@@ -64,7 +75,12 @@
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <label for="exampleInputEmail1">Department</label>
-                                        <input type="text" class="form-control" id="CreateDepartment" name="CreateDepartment" placeholder="Enter Department">
+                                        <div class="input-group margin">
+                                            <input type="text" class="form-control" id="CreateDepartment" name="CreateDepartment" placeholder="Enter Department">
+                                            <span class="input-group-btn">
+                                                <button type="button" class="btn btn-info btn-flat">+</button>
+                                            </span>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -72,7 +88,7 @@
                         </div>
 
                         <div class="box-footer">
-                            <button type="submit" class="btn btn-primary pull-right">Submit</button>
+                            <button type="submit" class="btn btn-primary pull-right">Save</button>
                         </div>
                     </form>
             </div>

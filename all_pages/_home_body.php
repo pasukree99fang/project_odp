@@ -1,5 +1,4 @@
-<?php
-	session_start();
+<?phpsession_start();
 	include 'connectdb.php';
 ?> 
 <div class="row">

@@ -1,8 +1,4 @@
-<?php 
-session_start();
-include 'connectdb.php';
-include '_session_login.php' 
-?>
+<?php include '_session_login.php' ?>
 <!DOCTYPE html>
 <html>
   <head>

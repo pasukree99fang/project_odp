@@ -1,5 +1,5 @@
 <?php
-$mysqli = new mysqli("db-odp.mysql.database.azure.com","adminodp@db-odp","odpsit26.","odp");
+$mysqli = new mysqli("localhost","root","","odp");
 // "db-odp.mysql.database.azure.com","adminodp@db-odp","60admin.","odp"
 //"db-odp.mysql.database.azure.com","adminodp@db-odp","odpsit26.","odp"
 //"localhost","root","","odp"

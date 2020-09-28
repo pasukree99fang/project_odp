@@ -8,7 +8,7 @@
                         <h3 class="box-title">Create Position </h3>
 
                         <div class="btn-group pull-right">
-                            <button type="button" class="btn btn-info dropdown-toggle" data-toggle="dropdown">
+                            <button type="button" class="btn btn-info dropdown-toggle" data-toggle="dropdown">Create Position 
                                 <span class="caret"></span>
                             </button>
                             <ul class="dropdown-menu">
@@ -17,6 +17,16 @@
                                 <li><a href="_createposition.php">Create Position</a></li>
                             </ul>
                         </div>
+
+                        <!-- <div class="btn-group pull-right">
+                            <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">Create Position
+                                <span class="fa fa-caret-down"></span></button>
+                            <ul class="dropdown-menu">
+                                <li><a href="_createdepartment.php">Create Department</a></li>
+                                <li><a href="_createsubdepartment.php">Create Sub department</a></li>
+                                <li><a href="_createposition.php">Create Position</a></li>
+                            </ul>
+                        </div> -->
                     </div>
 
                     <!-- DB tb_company -->
@@ -40,29 +50,36 @@
                                 </div>
                             </div>    
 
-                            <div class="col-md-4">
-                                <div class="form-group">
-                                    <label>Sub Department</label>
-                                    <?php
-                                        $strSQL3 = "SELECT * FROM tb_sub_department";
-                                        $objQuery3 = mysqli_query($mysqli,$strSQL3);
-                                    ?>
-                                    <select class="form-control select2" style="width: 100%;" name="sub_dpm">
-                                        <option selected="selected">Choose Sub Department</option>
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <label>Sub Department</label>
                                         <?php
-                                            while($objResult3 = mysqli_fetch_array($objQuery3))
-                                            { ?>
-                                            <option value="<?php echo $objResult3['sub_id']; ?>"><?php echo $objResult3['sub_name']; ?></option>
-                                        <?php } ?>
-                                    </select>
-                                </div> 
+                                            $strSQL3 = "SELECT * FROM tb_sub_department";
+                                            $objQuery3 = mysqli_query($mysqli,$strSQL3);
+                                        ?>
+                                        <select class="form-control select2" style="width: 100%;" name="sub">
+                                            <option selected="selected">Choose Sub Department</option>
+                                            <?php
+                                                while($objResult3 = mysqli_fetch_array($objQuery3))
+                                                { ?>
+                                                <option value="<?php echo $objResult3['sub_id']; ?>"><?php echo $objResult3['sub_name']; ?></option>
+                                            <?php } ?>
+                                        </select>
+                                    </div> 
+                                </div>
                             </div>
 
                             <div class="row">
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <label for="exampleInputEmail1">Position</label>
-                                        <input type="text" class="form-control" id="CreatePosition" name="CreatePosition" placeholder="Enter Position">
+                                        <div class="input-group margin">
+                                            <input type="text" class="form-control" id="CreatePosition" name="CreatePosition" placeholder="Enter Position">
+                                            <span class="input-group-btn">
+                                                <button type="button" class="btn btn-info btn-flat">+</button>
+                                            </span>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -70,7 +87,7 @@
                         </div>
 
                         <div class="box-footer">
-                            <button type="submit" class="btn btn-primary pull-right">Submit</button>
+                            <button type="submit" class="btn btn-primary pull-right">Save</button>
                         </div>
                     </form>
             </div>
