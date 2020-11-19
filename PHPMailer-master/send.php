@@ -14,6 +14,8 @@ require './vendor/autoload.php';
 // Instantiation and passing `true` enables exceptions
 $mail = new PHPMailer(true);
 
+//get มาว่าหัวหน้าไอดีอะไร
+
 try {
     //Server settings
     // $mail->SMTPDebug = SMTP::DEBUG_SERVER;                      // Enable verbose debug output
