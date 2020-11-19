@@ -1,5 +1,5 @@
-<?php 
-  //session_start();
+<?php
+//session_start();
 	include 'connectdb.php';
 ?> 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
@@ -46,7 +46,7 @@
         <span class="sr-only">Toggle navigation</span>
       </a>
 
-      <div class="navbar-custom-menu">
+      <div class="navbar-custom-menu ">
         <ul class="nav navbar-nav">
           
           <li class="dropdown notifications-menu">
@@ -66,7 +66,7 @@
             </ul>
           </li>
           
-          <li class="dropdown user user-menu">
+          <li class="dropdown user user-menu ">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
               <img src="file/pasu.jpg" class="user-image" alt="User Image">
               <span class="hidden-xs"><?php echo $_SESSION['us_firstname']; ?> <?php echo $_SESSION['us_lastname']; ?></span>
@@ -114,9 +114,9 @@
               </li>
 
               <li class="user-footer">
-                <div class="pull-left">
+                <!-- <div class="pull-left">
                   <a href="_profile.php" class="btn btn-default btn-flat">Profile</a>
-                </div>
+                </div> -->
                 <div class="pull-right">
                   <a href="_logout.php" class="btn btn-default btn-flat">Sign out</a>
                 </div>
