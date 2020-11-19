@@ -187,7 +187,7 @@
                         </div>
 
                         <div class="box-footer">
-                            <button type="submit" class="btn btn-primary pull-right">Save</button>
+                            <button type="submit" class="btn btn-primary pull-right fa fa-download"> Save</button>
                         </div>
                     </form>
             </div>

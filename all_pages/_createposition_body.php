@@ -8,7 +8,7 @@
                         <h3 class="box-title">Create Position </h3>
 
                         <div class="btn-group pull-right">
-                            <button type="button" class="btn btn-info dropdown-toggle" data-toggle="dropdown">Create Position 
+                            <button type="button" class="btn btn-info dropdown-toggle fa fa-book" data-toggle="dropdown"> Create Position 
                                 <span class="caret"></span>
                             </button>
                             <ul class="dropdown-menu">
@@ -80,6 +80,13 @@
                                                 <button type="button" class="btn btn-info btn-flat">+</button>
                                             </span>
                                         </div>
+
+                                        <div class="input-group margin">
+                                            <input type="text" class="form-control" id="CreateDepartment1" name="CreateDepartment1" placeholder="Enter Department">
+                                            <span class="input-group-btn">
+                                                <button type="button" id="btnPluz" class="btn btn-info btn-danger">x</button>
+                                            </span>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -87,7 +94,7 @@
                         </div>
 
                         <div class="box-footer">
-                            <button type="submit" class="btn btn-primary pull-right">Save</button>
+                            <button type="submit" class="btn btn-primary pull-right fa fa-download"> Save</button>
                         </div>
                     </form>
             </div>

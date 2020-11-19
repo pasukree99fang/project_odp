@@ -1,94 +1,95 @@
 <div class="box box-info">
-        <div class="box-header with-border">
-          <h3 class="box-title">Create Document</h3>
+          <div class="box-header with-border">
+            <h3 class="box-title">Create Document</h3>
 
-          <!-- - / X -->
-          <!-- <div class="box-tools pull-right">
-            <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i></button>
-            <button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-remove"></i></button>
-          </div> -->
-        </div>
-
-        <?php include '_manageform.php'; ?>
-
-      <div class="box-body">
-          <div class="row">
-            <div class="col-md-6">
-              <div class="form-group ">
-                <label>Document Title </label>
-                    <input type="text" class="form-control" id="inputEmail3" name="inputEmail3" placeholder="Enter Document title">
-              </div>
-
-            <!-- <div class="col-md-4">
-            <div class="form-group">
-                  <label>File input</label>
-                  <input type="file" id="inputfile" name="inputfile">
-                  <p class="help-block">Choose file to set permissions.</p>
-                </div>
+            <!-- - / X -->
+            <!-- <div class="box-tools pull-right">
+              <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i></button>
+              <button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-remove"></i></button>
             </div> -->
-            </div>
           </div>
-        
+
+          <?php include '_manageform.php'; ?>
+
         <div class="box-body">
-            <div class="row">
-              <div class="alert alert-warning alert-dismissible">
-                    <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
-                    <h4><i class="icon fa fa-warning"></i> Note!</h4>
-                    Pleas click on button to add tools in your document!!
-              </div>
-              <div class="col-md-4">
-                <a class="btn btn-app" type=button name="adminBtn" value="+" onclick="displayTextForm()">
-                  <i class="fa fa-text-width"></i> 
-                  <label>Text</label>
-              </a>
-              </div>
-
-              <div class="col-md-4">
-                <div id="pwdForm"></div>
-              </div>
-            </div>
-        </div>
-          
-
-            <div class="box-body">
               <div class="row">
-                <div class="col-md-3" style="align:center">
+                <div class="col-md-6">
+                  <div class="form-group ">
+                    <label>Document Title </label>
+                        <input type="text" class="form-control" id="inputEmail3" name="inputEmail3" placeholder="Enter Document title">
+                  </div>
+
+                  <!-- <div class="col-md-4">
+                  <div class="form-group">
+                        <label>File input</label>
+                        <input type="file" id="inputfile" name="inputfile">
+                        <p class="help-block">Choose file to set permissions.</p>
+                      </div>
+                  </div> -->
+                </div>
+              </div>
+        
+          
+              <div class="row">
+                <!-- <div class="alert alert-warning alert-dismissible">
+                      <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+                      <h4><i class="icon fa fa-warning"></i> Note!</h4>
+                      Pleas click on button to add tools in your document!!
+                </div> -->
+
+                <!-- <div class="col-md-1">
+                    <a class="btn btn-app" type=button name="adminBtn" value="FILE" onclick="displayTextForm()">
+                      <i class="fa fa-square"></i> 
+                      <label>Check All</label>
+                    </a>
+                </div> -->
+
+                <div class="col-md-1">
+                    <a class="btn btn-app" type=button name="adminBtn" value="FILE" onclick="displayTextForm()">
+                      <i class="fa fa-text-width"></i> 
+                      <label>Text</label>
+                    </a>
+                </div>
+
+                <div class="col-md-1">
+                    <a class="btn btn-app" type=button name="adminBtn" value="FILE" onclick="displayTextForm()">
+                      <i class="fa fa-comments"></i> 
+                      <label>Text box</label>
+                    </a>
+                </div>
+
+                <div class="col-md-1" style="align:center">
                     <a class="btn btn-app" type=button name="adminBtn" value="FILE" onclick="displayFileForm()">
                     <i class="fa fa-upload"></i> 
                     <label>File upload </label>
                     </a>
-                </div>             
-          
-                <div class="col-md-4">    
-                    <div id="pd"></div>
-                </div>
-              </div>
-            </div>
+                </div> 
 
-        
-      <div class="box-body">
-          <div class="row">
-            <div class="col-md-3" style="align:center">
-            <a class="btn btn-app" type=button name="adminBtn" value="FILE" onclick="displayForm()">
-                <i class="fa fa-check-square"></i> 
-              <label>Checkbox</label>
-              </a>
-          </div>
+                <div class="col-md-1" style="align:center">
+                  <a class="btn btn-app" type=button name="adminBtn" value="FILE" onclick="displayForm()">
+                    <i class="fa fa-check-square"></i> 
+                    <label>Checkbox</label>
+                  </a>
+                </div>
+
+                <div class="col-md-1" style="align:center">
+                  <a class="btn btn-app" type=button name="adminBtn" value="FILE" onclick="displayForm()">
+                    <i class="fa fa-dot-circle-o"></i> 
+                    <label>Radio Button</label>
+                  </a>
+                </div>
+
+                <!-- <div class="col-md-1" style="align:center">
+                  <a class="btn btn-app" type=button name="adminBtn" value="FILE" onclick="displayForm()">
+                    <i class="fa fa-remove"></i> 
+                    <label>Delete</label>
+                  </a>
+                </div> -->
+                
+              </div>
         </div>
-      </div>
 
         <div class="box-body">
-          <div class="row">
-            <div class="col-md-4" style="align:center">
-              <a class="btn btn-app" type=button name="adminBtn" value="FILE" onclick="displayForm()">
-                <i class="fa fa-dot-circle-o"></i> 
-              <label>Radio Button</label>
-              </a>
-          </div>
-        </div>
-</div>
-
-<div class="box-body">
           <div class="row">
             <div class="col-md-6">
               <div class="form-group">
@@ -105,7 +106,7 @@
         <!-- /.box-header -->
         <div class="box-body">
           <div class="row">
-            <div class="col-md-4">
+            <!-- <div class="col-md-4">
               <div class="form-group">
                 <label>Department</label>
                 <?php
@@ -121,8 +122,9 @@
                   <?php } ?>
                 </select>
               </div>
-            </div>
-            <div class="col-md-4">
+            </div> -->
+
+            <!-- <div class="col-md-4">
               <div class="form-group">
                 <label>Sub Department</label>
                 <?php
@@ -138,7 +140,8 @@
                   <?php } ?>
                 </select>
               </div>
-            </div>
+            </div> -->
+
             <div class="col-md-4">
               <div class="form-group">
                 <label>Position</label>
@@ -158,26 +161,14 @@
             </div>
           </div>
         </div>
-        <!-- <div class="box-body">
-          <div class="row">
-            <div class="col-md-6">
-              คลิก Photo เพื่อเพิ่มรูปภาพ<br>
-              <input class="btn btn-default form-control"type=button name="adminBtn" value="PHOTO" onclick="displayForm()"><br><br>
-            </div>
-
-            <div class="col-md-4">
-              <div id="pwdForm"></div>
-            </div>
-          </div>
-        </div> -->
 
         <div class="box-footer">
           Please check correctness before pressing next.
         </div>
+
         <div class="box-footer">
                 <!-- <button type="submit" class="btn btn-default"><a href="_createdocument.php">Back</a></button> -->
                 <!-- <button type="submit" class="btn btn-default pull-right"><a href="_assign_privilegr.php">Next</a></button> -->
-                <button type="submit" class="btn btn-info pull-right">Save</button> 
+                <button type="submit" class="btn btn-primary pull-right fa fa-download"> Save</button> 
         </div>
-</div>
-</div>
+  </div>

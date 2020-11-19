@@ -23,6 +23,7 @@
                   <th><div align="center">Date</div></th>
                   <th><div align="center">Status</div></th>
                   <th><div align="center">Reason</div></th>
+                  <th><div align="center">View Document</div></th>
                 </tr>
                 <tr>
                   <td><div align="center">183</div></td>
@@ -30,13 +31,15 @@
                   <td><div align="center">11-7-2014</div></td>
                   <td><div align="center"><span class="label label-success">Approved</span></div></td>
                   <td><div align="center">Bacon ipsum dolor sit amet salami venison chicken flank fatback doner.</div></td>
+                  <td><div align="center"><button type="submit" class="btn btn-info  btn-primary fa fa-eye"> View!</button></div></td>
                 </tr>
                 <tr>
                   <td><div align="center">183</div></td>
                   <td><div align="center">John Doe</div></td>
                   <td><div align="center">11-7-2014</div></td>
-                  <td><div align="center"><span class="label label-warning">Pending</span></div></td>
+                  <td><div align="center"><span class="label label-danger">Pending</span></div></td>
                   <td><div align="center">Bacon ipsum dolor sit amet salami venison chicken flank fatback doner.</div></td>
+                  <td><div align="center"><button type="submit" class="btn btn-info  btn-primary fa fa-eye"> View!</button></div></td>
                 </tr>
                 <tr>
                   <td><div align="center">183</div></td>
@@ -44,13 +47,15 @@
                   <td><div align="center">11-7-2014</div></td>
                   <td><div align="center"><span class="label label-success">Approved</span></div></td>
                   <td><div align="center">Bacon ipsum dolor sit amet salami venison chicken flank fatback doner.</div></td>
+                  <td><div align="center"><button type="submit" class="btn btn-info  btn-primary fa fa-eye"> View!</button></div></td>
                 </tr>
                 <tr>
                   <td><div align="center">183</div></td>
                   <td><div align="center">John Doe</div></td>
                   <td><div align="center">11-7-2014</div></td>
-                  <td><div align="center"><span class="label label-warning">Pending</span></div></td>
+                  <td><div align="center"><span class="label label-danger">Pending</span></div></td>
                   <td><div align="center">Bacon ipsum dolor sit amet salami venison chicken flank fatback doner.</div></td>
+                  <td><div align="center"><button type="submit" class="btn btn-info  btn-primary fa fa-eye"> View!</button></div></td>
                 </tr>
               </table>
             </div>

@@ -8,7 +8,7 @@
                         <h3 class="box-title">Create Department </h3>
 
                         <div class="btn-group pull-right">
-                            <button type="button" class="btn btn-info dropdown-toggle" data-toggle="dropdown">Create Department 
+                            <button type="button" class="btn btn-info dropdown-toggle fa fa-book" data-toggle="dropdown"> Create Department 
                                 <span class="caret"></span>
                             </button>
                             <ul class="dropdown-menu">
@@ -29,6 +29,59 @@
                         </div> -->
 
                     </div>
+
+                    <!-- <div class="box-body">
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <table id="myTbl" width="650" border="1" cellspacing="2" cellpadding="0">
+                                    <tr class="firstTr">
+                                    <input type="text" class="text_data" name="data2[]" id="data2[]" value="" />
+                                    <input name="h_item_id[]" type="hidden" id="h_item_id[]" value="" />
+                                    <input name="h_all_id_data" type="hidden" id="h_all_id_data" value="<?=$all_id_data?>" />
+                                </div>
+                            </div>
+                    </div> -->
+
+                    <script>
+                        $(function(){
+
+                            $("#studentID").keypress(function (e) {
+                                if (e.which != 8 && e.which != 0 && (e.which < 48 || e.which > 57)) {
+                                            return false;
+                                }
+                            });
+
+                            
+                            $('#btnPluz').click(function(){
+                                var num=parseInt($('#number').val())+1;
+                                //alert(num);
+                                var tr=$("<div class='input-group margin'><input type='text' class='form-control' id='CreateDepartment"+num+"' name='CreateDepartment"+num+"' placeholder='Enter Department'><span class='input-group-btn'><button type='button' id='btnDel' rel='"+num+"' class='btn btn-info btn-danger'>x</button></span></div>");
+                                $('#addRow tr:first').before(tr);
+                                $('#number').val(num);
+                                $("#studentID").keypress(function (e) {
+                                        if (e.which != 8 && e.which != 0 && (e.which < 48 || e.which > 57)) {
+                                        return false;
+                                        }
+                                });
+                            });
+
+
+                            $('#addRow').on('click','#btnDel',function(){
+                                var num=parseInt($('#number').val())-1;
+                                var rel=$(this).attr('rel');
+                                var rowCount = $('#addRow>tr').length;
+                                var i=rowCount;
+                                $('#number').val(num);
+                                $("#tr"+rel+"").remove();
+                                $('#addRow span').each(function(index, element) {
+                                    --i
+                                    $(this).text(i);
+                                });
+                            });
+
+                        });
+
+                    </script>
 
                     <!-- DB tb_company -->
                     <?php $SQL1 = "SELECT a.us_company_id, a.us_username, a.us_firstname, 
@@ -51,36 +104,26 @@
                                 </div>
                             </div>    
 
-                            <!-- <div class="row">
-                                <div class="col-md-6">
-                                    <div class="form-group">
-                                        <label for="exampleInputEmail1">Department</label>
-                                        <input type="username" class="form-control" id="CreateDepartment" name="CreateDepartment" placeholder="Enter Department">
-                                    </div>
-                                </div> 
-
-                                <div class="col-md-6">
-                                    <div class="input-group">
-                                    <label for="exampleInputEmail1">Department   </label>
-                                        <input class="form-control" placeholder="Type message...">
-
-                                        <div class="input-group-btn">
-                                        <button type="button" class="btn btn-success"><i class="fa fa-plus"></i></button>
-                                        </div>
-                                    </div>
-                                </div> 
-                            </div> -->
-
                             <div class="row">
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <label for="exampleInputEmail1">Department</label>
-                                        <div class="input-group margin">
-                                            <input type="text" class="form-control" id="CreateDepartment" name="CreateDepartment" placeholder="Enter Department">
                                             <span class="input-group-btn">
-                                                <button type="button" class="btn btn-info btn-flat">+</button>
+                                                <button type="button" id="btnPluz" class="btn btn-info btn-flat">+</button>
                                             </span>
+                                            <!-- <div class="col-md-6"> -->
+                                        <div class="input-group margin">
+                                            <input type="text" class="form-control" id="CreateDepartment1" name="CreateDepartment1" placeholder="Enter Department">
+                                            
                                         </div>
+                                        <!-- </div> -->
+
+                                        <!-- <div class="input-group margin">
+                                            <input type="text" class="form-control" id="CreateDepartment1" name="CreateDepartment1" placeholder="Enter Department">
+                                            <span class="input-group-btn">
+                                                <button type="button" id="btnPluz" class="btn btn-info btn-danger">x</button>
+                                            </span>
+                                        </div> -->
                                     </div>
                                 </div>
                             </div>
@@ -88,9 +131,11 @@
                         </div>
 
                         <div class="box-footer">
-                            <button type="submit" class="btn btn-primary pull-right">Save</button>
+                            <button type="submit" class="btn btn-primary pull-right fa fa-download"> Save</button>
                         </div>
                     </form>
             </div>
         </div>
 </div>
+
+<!-- <div class='input-group margin'><input type='text' class='form-control' id='CreateDepartment"+num+"' name='CreateDepartment"+num+"' placeholder='Enter Department'><span class='input-group-btn'><button type='button' id='btnDel' rel='"+num+"' class='btn btn-info btn-danger'>x</button></span></div> -->

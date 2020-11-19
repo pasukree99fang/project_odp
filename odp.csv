@@ -1,0 +1,64 @@
+"afft_id","afft_user_id","afft_position_id","afft_department_id","afft_sub_department_id"
+"1","1","3","1","1"
+"2","2","2","1","1"
+"3","3","3","1","1"
+"4","4","1","0","0"
+"5","0","0","0","0"
+"6","0","0","0","0"
+"7","0","0","0","0"
+"8","0","0","0","0"
+"9","0","0","0","0"
+"10","0","0","0","0"
+"aval_id","aval_approve","aval_specify","aval_date_time","aval_approver_id","aval_document_id"
+"aver_id","aver_affiliation_id"
+"cpn_id","cpn_name"
+"1","2YOU"
+"ct_id","ct_firstname","ct_lastname","ct_email","ct_company","ct_contact_company","ct_admin_number"
+"dpm_id","dpm_name","dpm_company_id"
+"1","IT","1"
+"17","Infra","1"
+"doc_id","doc_date_time","doc_document","doc_form_id","doc_user_id"
+"1","21/05/2020 07:22",NULL,"16","sit60130500063"
+"2","21/05/2020 07:24",NULL,"14","sit60130500063"
+"3","21/05/2020 07:38",NULL,"1","sit60130500107"
+"4","21/05/2020 07:56",NULL,"1","sit60130500107"
+"5","15/09/2020 11:49",NULL,"1","sit60130500063"
+"6","23/09/2020 09:34",NULL,"1","sit60130500006"
+"7","23/09/2020 09:56",NULL,"16","sit60130500063"
+"8","26/09/2020 08:30",NULL,"14","sit60130500006"
+"9","26/09/2020 11:49",NULL,"17","sit60130500063"
+"for_id","for_form_code","for_form_element_id","for_user_id"
+"ele_id","ele_title","ele_type","ele_version_id","ele_data"
+"1",NULL,NULL,"unicorn.jpg",NULL
+"6",NULL,NULL,"logo.png",NULL
+"7",NULL,NULL,"0_f5541_1fbf206_XXXL.jpg",NULL
+"8",NULL,NULL,"0_f5541_1fbf206_XXXL.jpg",NULL
+"9",NULL,NULL,"S__4308996.jpg",NULL
+"10",NULL,NULL,"ktbpasu.jpg",NULL
+"14","PackageDG",NULL,"PackageDG.png",NULL
+"15","PackageDG",NULL,"cdg000.png",NULL
+"16","pasukree",NULL,"Untitled Diagram.png",NULL
+"17","123456789",NULL,"cdg000.png",NULL
+"18",,NULL,"PackageDG.png",NULL
+"noti_id","noti_user_id","noti_status_id","member_token","msg_text","msg_status","timestamp"
+"pst_id","pst_name","pst_sub_department_id"
+"1","CEO","0"
+"2","Manager","1"
+"3","Employee","1"
+"11","Support","0"
+"tus_id","tus_document_id","tus_approver_id","tus_level","tus_status","tus_date_time"
+"sapp_id","sapp_form_id","sapp_approver_id","sapp_level"
+"1","PackageDG","sit60130500006","1"
+"2","PackageDG","sit60130500006","1"
+"3","pasukree","sit60130500006","1"
+"4","123456789","sit60130500006","1"
+"5",,"sit60130500006","1"
+"6","form","sit60130500063","1"
+"sub_id","sub_name","sub_department_id"
+"1","Security","1"
+"10","System check","0"
+"us_id","us_username","us_password","us_firstname","us_lastname","us_email","us_password_approve","us_manager_id","us_manager","us_isadmin","us_isapproval","us_company_id","us_photo"
+"1","sit60130500063","60130500063","Pasukree","Khodnarin","pasukree.khodnarin@gmail.com","pasu99","sit60130500006","no","yes","no","1","pasu.jpg"
+"2","sit60130500006","60130500006","Kemchira","Paengnuch","kemchira.pangk@mail.kmutt.ac.th","kemji99",,"yes","no","no","1",NULL
+"3","sit60130500107","60130500107","Yanisa","Kanchai","yanisa.18ns@mail.kmutt.ac.th","yani99","sit60130500006","no","no","no","1",NULL
+"4","sit60130500000","60130500000","Siri","Mongkhon","pasukree.money@gmai.com","siri99",,"yes","no","yes","1",NULL
