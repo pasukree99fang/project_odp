@@ -6,6 +6,13 @@
   <title>2YOU</title>
   <?php include '_plugin.php'; 
         include 'connectdb.php';?>
+        <?php
+            if(!isset($_SESSION)) 
+            { 
+                session_start(); 
+            } 
+        ?>
+        <?php include 'connectdb.php';?>
 </head>
 <!-- DB for profile get cpn_name -->
 <?php

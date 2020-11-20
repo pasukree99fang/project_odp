@@ -1,5 +1,10 @@
+<?php
+    if(!isset($_SESSION)) 
+    { 
+        session_start(); 
+    } 
+?>
 <?php include 'connectdb.php';?>
-<?phpsession_start();?>
 <?php
   $strSQL = "SELECT * FROM tb_user";
   $objQuery = mysqli_query($mysqli,$strSQL);

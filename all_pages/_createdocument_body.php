@@ -1,3 +1,10 @@
+<?php
+    if(!isset($_SESSION)) 
+    { 
+        session_start(); 
+    } 
+?>
+<?php include 'connectdb.php';?>
 <div class="box box-info">
           <div class="box-header with-border">
             <h3 class="box-title">Create Document</h3>

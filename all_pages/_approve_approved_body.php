@@ -1,3 +1,11 @@
+<?php
+    if(!isset($_SESSION)) 
+    { 
+        session_start(); 
+    } 
+?>
+<?php include 'connectdb.php';?>
+
 <div class="row">
         <div class="col-xs-12">
           <div class="box">

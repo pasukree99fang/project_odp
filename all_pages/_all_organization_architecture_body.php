@@ -1,5 +1,10 @@
+<?php
+    if(!isset($_SESSION)) 
+    { 
+        session_start(); 
+    } 
+?>
 <?php include 'connectdb.php';?>
-<?phpsession_start();?>
 <?php
   $strSQL1 = "SELECT * FROM tb_department";
   $objQuery1 = mysqli_query($mysqli,$strSQL1);

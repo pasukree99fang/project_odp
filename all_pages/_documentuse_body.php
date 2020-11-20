@@ -1,5 +1,10 @@
-<?php include 'connectdb.php'; ?>
-<?php session_start();?>
+<?php
+    if(!isset($_SESSION)) 
+    { 
+        session_start(); 
+    } 
+?>
+<?php include 'connectdb.php';?>
 <?php
   $strSQL = "SELECT * FROM tb_form_element";
   $objQuery = mysqli_query($mysqli,$strSQL);
