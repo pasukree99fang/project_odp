@@ -1,32 +1,8 @@
 <?php
-include 'connectdb.php';
 
-function sendNotification ($userId, $message) {
-    $result = mysqli_query('
-    $mysqli', "INSERT INTO tb_notification 
-    SET msg_text = '".$message."' ,noti_user_id_receiver = '".$userId."',msg_status = 1");
+function sendNotification ($bossData, $message) {
+    $mysqli = new mysqli("localhost","root","","odp");
+    $result = mysqli_query($mysqli, "INSERT INTO tb_notification 
+    SET noti_user_id_receiver = '".$bossData."',msg_text = '".$message."' ,msg_status = 1");
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+?>
