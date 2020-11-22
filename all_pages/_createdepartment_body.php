@@ -39,7 +39,7 @@
                                     <div class="form-group">
                                         <label for="exampleInputEmail1">Company</label>
                                         <input type="text" class="form-control" id="cpn_name" name="cpn_name" placeholder="<?php echo $objResult1['cpn_name']; ?>" disabled>
-                                        <input type="hidden" name="cpn_id" id="cpn_id" value="<?php echo$objResult1["cpn_id"]; ?>">
+                                        <input type="hidden" name="cpn_id" id="cpn_id" value="<?php echo $objResult1["cpn_id"]; ?>">
                                     </div>
                                 </div>
                             </div>    
@@ -91,12 +91,13 @@
             </div> -->
                         <div class="box-footer">
                             <!-- <input type="button" name="submit" id="submit" class="btn btn-primary pull-right fa fa-download" value="Save"> -->
-                            <input type="button" name="submit" id="submit" class="btn btn-primary pull-right fa fa-download" value="Save" />
+                            <button type="button" name="submit" id="submit" class="btn btn-primary pull-right fa fa-download" value="Save"> Save</botton>
                         </div>
                     </form>
             </div>
         </div>
 </div>
+
 <script>
 $(document).ready(function(){
     var i=1;
