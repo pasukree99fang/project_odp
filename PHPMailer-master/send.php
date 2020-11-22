@@ -14,8 +14,6 @@ require './vendor/autoload.php';
 // Instantiation and passing `true` enables exceptions
 $mail = new PHPMailer(true);
 
-//get มาว่าหัวหน้าไอดีอะไร
-
 try {
     //Server settings
     // $mail->SMTPDebug = SMTP::DEBUG_SERVER;                      // Enable verbose debug output
@@ -48,8 +46,8 @@ try {
 
     // Content
     //$mail->isHTML(true);                                  // Set email format to HTML
-    $mail->Subject = 'Here is the subject';
-    $mail->msgHTML('Here is the subject');
+    $mail->Subject = 'เรียนอาจารย์ที่ปรึกษาที่เคารพ';
+    $mail->msgHTML('สวัสดีค่ะอาจารย์กิตติพงศ์');
 
     // $mail->Body    = 'This is the HTML message body <b>in bold!</b>';
     // $mail->AltBody = 'This is the body in plain text for non-HTML mail clients';

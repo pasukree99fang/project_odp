@@ -5,7 +5,38 @@
     } 
 ?>
 <?php include 'connectdb.php';?>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
+<script>
+    $(document).ready(function(e) {
+        increaseNotify();
+        setInterval(increaseNotify, 3000);
+        $("#btn1").click(function(){
+            decreaseNotify()
+        })
+    });
+
+    function increaseNotify() { // โหลดตัวเลขทั้งหมดที่ถูกส่งมาแสดง
+        $.ajax({
+            url: "increase.php",
+            type: 'GET',
+            success: function(obj) {
+                var obj = JSON.parse(obj);
+                $(".badge_number").text(obj.badge_number);
+            }
+        });
+    }
+
+    function decreaseNotify(){ // ลบตัวเลข badge number
+	$.ajax({
+		url: "decrease.php",
+		type: 'GET',
+		success: function(obj) {
+			
+		}
+	});
+}
+</script>
 
 <header class="main-header">
 <?php include 'connectdb.php'; ?>
@@ -26,10 +57,17 @@
               <i class="fa fa-bell-o"></i>
               <span class="badge_number label label-warning">0</span>
             </a>
+            <?php 
+                $sqlnoti = "SELECT msg_text FROM tb_notification WHERE noti_user_id_receiver = '".$_SESSION['us_id']."' LIMIT 5" ;
+                $result = mysqli_query($mysqli,$sqlnoti);
+                ?>
             <ul class="dropdown-menu">
               <li class="header">You have notifications</li>
               <li>
-                
+                <?php
+                  while ($noti = mysqli_fetch_assoc($result)){
+                    echo '<ul class="menu">'.$noti['msg_text'].'</ul>';}
+                  ?>
                 <ul class="menu">
                   
                 </ul>
