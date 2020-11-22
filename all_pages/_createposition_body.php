@@ -75,7 +75,7 @@
                                 </div>
                             </div>
 
-                            <div class="row">
+                            <!-- <div class="row">
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <label for="exampleInputEmail1">Position</label>
@@ -92,6 +92,26 @@
                                                 <button type="button" id="btnPluz" class="btn btn-info btn-danger">x</button>
                                             </span>
                                         </div>
+                                    </div>
+                                </div>
+                            </div> -->
+
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label for="exampleInputEmail1">Position</label>
+                                        <table class="table" id="dynamic_field" border="0">
+                                            <tr>
+                                                <td><input type="text" name="name[]" placeholder="Enter Position" class="form-control name_list" /></td>
+                                                <td>
+                                                    <span class="input-group-btn">
+                                                        <button type="button" name="add" id="add" class="btn btn-info btn-flat">+</button>
+                                                    </span>
+                                                </td>
+                                            </tr>
+                                        </table>
+
+
                                     </div>
                                 </div>
                             </div>

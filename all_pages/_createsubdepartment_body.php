@@ -50,7 +50,7 @@
                     $objResult1 = mysqli_fetch_array($objQuery1,MYSQLI_ASSOC); ?>
 
                     <!-- form start -->
-                    <form role="form">
+                    <form role="form" name="add_name" id="add_name">
                         <div class="box-body">
                             <div class="row">
                                 <div class="col-md-6">
@@ -82,7 +82,7 @@
                                 </div>
                             </div>
 
-                            <div class="row">
+                            <!-- <div class="row">
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <label for="exampleInputEmail1">Sub Department</label>
@@ -101,14 +101,65 @@
                                         </div>
                                     </div>
                                 </div>
+                            </div> -->
+
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label for="exampleInputEmail1">Sub Department</label>
+                                        <table class="table" id="dynamic_field" border="0">
+                                            <tr>
+                                                <td><input type="text" name="name[]" placeholder="Enter Sub Department" class="form-control name_list" /></td>
+                                                <td>
+                                                    <span class="input-group-btn">
+                                                        <button type="button" name="add" id="add" class="btn btn-info btn-flat">+</button>
+                                                    </span>
+                                                </td>
+                                            </tr>
+                                        </table>
+
+
+                                    </div>
+                                </div>
                             </div>
 
                         </div>
 
                         <div class="box-footer">
-                            <button type="submit" class="btn btn-primary pull-right fa fa-download"> Save</button>
+                        <button type="button" name="submit" id="submit" class="btn btn-primary pull-right fa fa-download" value="Save"> Save</botton>
                         </div>
                     </form>
             </div>
         </div>
 </div>
+
+<script>
+$(document).ready(function(){
+    var i=1;
+    $('#add').click(function(){
+        i++;
+        $('#dynamic_field').append('<tr id="row'+i+'"><td><input type="text" name="name[]" placeholder="Enter Department" class="form-control name_list" /></td><td><button type="button" name="remove" id="'+i+'" class="btn btn-danger btn_remove">x</button></td></tr>');
+    });
+    
+    $(document).on('click', '.btn_remove', function(){
+        var button_id = $(this).attr("id"); 
+        $('#row'+button_id+'').remove();
+    });
+    
+    $('#submit').click(function(){  
+        console.log('#submit');
+        $.ajax({
+            url:"_managecreate_subdepartment.php",
+            //url:"name.php",
+            method:"POST",
+            data:$('#add_name').serialize(),
+            success:function(data)
+            {
+                alert(data);
+                $('#add_name')[0].reset();
+            }
+        });
+    });
+    
+});
+</script>
