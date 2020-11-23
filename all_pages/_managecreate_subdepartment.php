@@ -1,21 +1,23 @@
-<?php 
-	session_start();
-    include 'connectdb.php'; 
-?>
- 
-<?php         
-        echo "Department ".$dpm=$_POST['dpm'];
-    	echo "Create Sub Department".$CreateSub=$_POST['CreateSub']; 
-
-                $DB2 = "SELECT dpm_id FROM tb_department
-                WHERE dpm_id ='$dpm' ";
-                $objQuery2 = mysqli_query($mysqli,$DB2);
-                $objResult2 = mysqli_fetch_array($objQuery2,MYSQLI_ASSOC);
-
-        $sql2="INSERT INTO tb_sub_department (sub_name, sub_department_id) VALUES ('$CreateSub','".$objResult2['dpm_id']."')";
-        $query2=mysqli_query($mysqli, $sql2);
-        
-        echo "<script>alert('Save Data Complete'); window.location.href='_createsubdepartment.php';</script>";
-
-    
-?>
+<?php
+$connect = mysqli_connect("localhost", "root", "", "odp");
+$number = count($_POST["name"]);
+//echo $_POST["cpn_id"];
+// if($number >= 1)
+if (isset($_POST['name']) && $_POST['name'] != '')
+{
+    for($i=0; $i<$number; $i++)
+    {
+        if(trim($_POST["name"][$i] != ''))
+        {
+            $sql = "INSERT INTO tb_sub_department(sub_name,sub_department_id) 
+            VALUES('".mysqli_real_escape_string($connect, $_POST["name"][$i])."'
+                    ,'".mysqli_real_escape_string($connect, $_POST["dpm_id"])."')";
+            mysqli_query($connect, $sql);
+        }
+    }
+    echo "Data Inserted";
+}
+else
+{
+    echo "Please Enter Name";
+}

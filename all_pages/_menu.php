@@ -55,7 +55,7 @@
           <li class="dropdown notifications-menu">
             <a href="#" id="btn1" class="dropdown-toggle" data-toggle="dropdown">
               <i class="fa fa-bell-o"></i>
-              <span class="badge_number label label-warning">0</span>
+              <span class="badge_number label label-warning">9</span>
             </a>
             <?php 
                 $sqlnoti = "SELECT msg_text FROM tb_notification WHERE noti_user_id_receiver = '".$_SESSION['us_id']."' LIMIT 5" ;

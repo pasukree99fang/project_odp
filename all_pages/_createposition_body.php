@@ -43,7 +43,7 @@
                     $objResult1 = mysqli_fetch_array($objQuery1,MYSQLI_ASSOC); ?>
 
                     <!-- form start -->
-                    <form role="form">
+                    <form role="form" name="add_name" id="add_name">
                         <div class="box-body">
                             <div class="row">
                                 <div class="col-md-6">
@@ -63,7 +63,7 @@
                                             $strSQL3 = "SELECT * FROM tb_sub_department";
                                             $objQuery3 = mysqli_query($mysqli,$strSQL3);
                                         ?>
-                                        <select class="form-control select2" style="width: 100%;" name="sub">
+                                        <select class="form-control select2" style="width: 100%;" name="sub_id">
                                             <option selected="selected">Choose Sub Department</option>
                                             <?php
                                                 while($objResult3 = mysqli_fetch_array($objQuery3))
@@ -115,13 +115,68 @@
                                     </div>
                                 </div>
                             </div>
-
                         </div>
+                        <?php   
+    $sql = "SELECT * FROM tb_department";
+    $result = mysqli_query($mysqli,$sql);
 
+?>
+            <!-- <div class="form-group">
+                <table border="1">
+                    <thead>
+                        <tr>
+                            <th>No.</th>
+                            <th>dpm_name</th>
+                            <th>cpn_name</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                    <?php $i=1; while($row = mysqli_fetch_array($result)){ ?>
+                        <tr>
+                            <td><?php echo $i;?></td>
+                            <td><?php echo $row["dpm_name"];?></td>
+                            <td><?php echo $row["dpm_company_id"]; ?></td>
+                        </tr>
+                    <?php $i++; } ?>
+                    </tbody>
+                </table>
+            </div> -->
                         <div class="box-footer">
-                            <button type="submit" class="btn btn-primary pull-right fa fa-download"> Save</button>
+                            <!-- <input type="button" name="submit" id="submit" class="btn btn-primary pull-right fa fa-download" value="Save"> -->
+                            <button type="button" name="submit" id="submit" class="btn btn-primary pull-right fa fa-download" value="Save"> Save</botton>
                         </div>
                     </form>
             </div>
         </div>
 </div>
+
+<script>
+$(document).ready(function(){
+    var i=1;
+    $('#add').click(function(){
+        i++;
+        $('#dynamic_field').append('<tr id="row'+i+'"><td><input type="text" name="name[]" placeholder="Enter Position" class="form-control name_list" /></td><td><button type="button" name="remove" id="'+i+'" class="btn btn-danger btn_remove">x</button></td></tr>');
+    });
+    
+    $(document).on('click', '.btn_remove', function(){
+        var button_id = $(this).attr("id"); 
+        $('#row'+button_id+'').remove();
+    });
+    
+    $('#submit').click(function(){  
+        console.log('#submit');
+        $.ajax({
+            url:"_managecreate_position.php",
+            //url:"name.php",
+            method:"POST",
+            data:$('#add_name').serialize(),
+            success:function(data)
+            {
+                alert(data);
+                $('#add_name')[0].reset();
+            }
+        });
+    });
+    
+});
+</script>

@@ -42,13 +42,6 @@
                     $objQuery1 = mysqli_query($mysqli,$SQL1);
                     $objResult1 = mysqli_fetch_array($objQuery1,MYSQLI_ASSOC); ?>
 
-                    <?php $SQL1 = "SELECT a.us_company_id, a.us_username, a.us_firstname, 
-                    b.cpn_id, b.cpn_name FROM tb_user a 
-                    LEFT OUTER JOIN (SELECT * FROM tb_company) b ON (a.us_company_id=b.cpn_id)
-                    WHERE us_username = '".$_SESSION['us_username']."'";
-                    $objQuery1 = mysqli_query($mysqli,$SQL1);
-                    $objResult1 = mysqli_fetch_array($objQuery1,MYSQLI_ASSOC); ?>
-
                     <!-- form start -->
                     <form role="form" name="add_name" id="add_name">
                         <div class="box-body">
@@ -70,7 +63,7 @@
                                             $strSQL2 = "SELECT * FROM tb_department";
                                             $objQuery2 = mysqli_query($mysqli,$strSQL2);
                                         ?>
-                                        <select class="form-control select2" style="width: 100%;" name="dpm">
+                                        <select class="form-control select2" style="width: 100%;" name="dpm_id">
                                             <option selected="selected">Choose Department</option>
                                             <?php
                                                 while($objResult2 = mysqli_fetch_array($objQuery2))
@@ -122,11 +115,35 @@
                                     </div>
                                 </div>
                             </div>
-
                         </div>
+                        <?php   
+    $sql = "SELECT * FROM tb_department";
+    $result = mysqli_query($mysqli,$sql);
 
+?>
+            <!-- <div class="form-group">
+                <table border="1">
+                    <thead>
+                        <tr>
+                            <th>No.</th>
+                            <th>dpm_name</th>
+                            <th>cpn_name</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                    <?php $i=1; while($row = mysqli_fetch_array($result)){ ?>
+                        <tr>
+                            <td><?php echo $i;?></td>
+                            <td><?php echo $row["dpm_name"];?></td>
+                            <td><?php echo $row["dpm_company_id"]; ?></td>
+                        </tr>
+                    <?php $i++; } ?>
+                    </tbody>
+                </table>
+            </div> -->
                         <div class="box-footer">
-                        <button type="button" name="submit" id="submit" class="btn btn-primary pull-right fa fa-download" value="Save"> Save</botton>
+                            <!-- <input type="button" name="submit" id="submit" class="btn btn-primary pull-right fa fa-download" value="Save"> -->
+                            <button type="button" name="submit" id="submit" class="btn btn-primary pull-right fa fa-download" value="Save"> Save</botton>
                         </div>
                     </form>
             </div>
@@ -138,7 +155,7 @@ $(document).ready(function(){
     var i=1;
     $('#add').click(function(){
         i++;
-        $('#dynamic_field').append('<tr id="row'+i+'"><td><input type="text" name="name[]" placeholder="Enter Department" class="form-control name_list" /></td><td><button type="button" name="remove" id="'+i+'" class="btn btn-danger btn_remove">x</button></td></tr>');
+        $('#dynamic_field').append('<tr id="row'+i+'"><td><input type="text" name="name[]" placeholder="Enter Sub Department" class="form-control name_list" /></td><td><button type="button" name="remove" id="'+i+'" class="btn btn-danger btn_remove">x</button></td></tr>');
     });
     
     $(document).on('click', '.btn_remove', function(){
