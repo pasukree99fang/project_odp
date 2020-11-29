@@ -1,10 +1,5 @@
-<?php
-    if(!isset($_SESSION)) 
-    { 
-        session_start(); 
-    } 
-?>
 <?php include 'connectdb.php';?>
+<?phpsession_start();?>
 
 <div class="row">
         <div class="col-md-12">
@@ -39,7 +34,7 @@
                                     <div class="form-group">
                                         <label for="exampleInputEmail1">Company</label>
                                         <input type="text" class="form-control" id="cpn_name" name="cpn_name" placeholder="<?php echo $objResult1['cpn_name']; ?>" disabled>
-                                        <input type="hidden" name="cpn_id" id="cpn_id" value="<?php echo $objResult1["cpn_id"]; ?>">
+                                        <input type="hidden" name="cpn_id" id="cpn_id" value="<?php echo$objResult1["cpn_id"]; ?>">
                                     </div>
                                 </div>
                             </div>    
@@ -48,9 +43,9 @@
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <label for="exampleInputEmail1">Department</label>
-                                        <table class="table" id="dynamic_field" border="0">
+                                        <table class="table" id="dynamic_field">
                                             <tr>
-                                                <td><input type="text" name="name[]" placeholder="Enter Department" class="form-control name_list" /></td>
+                                                <td><input type="text" name="name[]" placeholder="Enter your Name" class="form-control name_list" /></td>
                                                 <td>
                                                     <span class="input-group-btn">
                                                         <button type="button" name="add" id="add" class="btn btn-info btn-flat">+</button>
@@ -65,9 +60,8 @@
                             </div>
                         </div>
                         <?php   
-    $sql = "SELECT * FROM tb_department";
-    $result = mysqli_query($mysqli,$sql);
-
+    //$sql = "SELECT * FROM tb_department";
+    //$result = mysqli_query($mysqli,$sql);
 ?>
             <!-- <div class="form-group">
                 <table border="1">
@@ -91,19 +85,19 @@
             </div> -->
                         <div class="box-footer">
                             <!-- <input type="button" name="submit" id="submit" class="btn btn-primary pull-right fa fa-download" value="Save"> -->
+                            <!-- <input type="button" name="submit" id="submit" class="btn btn-info" value="Submit" /> -->
                             <button type="button" name="submit" id="submit" class="btn btn-primary pull-right fa fa-download" value="Save"> Save</botton>
                         </div>
                     </form>
             </div>
         </div>
 </div>
-
 <script>
 $(document).ready(function(){
     var i=1;
     $('#add').click(function(){
         i++;
-        $('#dynamic_field').append('<tr id="row'+i+'"><td><input type="text" name="name[]" placeholder="Enter Department" class="form-control name_list" /></td><td><button type="button" name="remove" id="'+i+'" class="btn btn-danger btn_remove">x</button></td></tr>');
+        $('#dynamic_field').append('<tr id="row'+i+'"><td><input type="text" name="name[]" placeholder="Enter your Name" class="form-control name_list" /></td><td><button type="button" name="remove" id="'+i+'" class="btn btn-danger btn_remove">x</button></td></tr>');
     });
     
     $(document).on('click', '.btn_remove', function(){

@@ -1,10 +1,5 @@
-<?php
-    if(!isset($_SESSION)) 
-    { 
-        session_start(); 
-    } 
-?>
 <?php include 'connectdb.php';?>
+<?phpsession_start();?>
 <?php
   $strSQL = "SELECT * FROM tb_user";
   $objQuery = mysqli_query($mysqli,$strSQL);
@@ -19,12 +14,12 @@
                     <div align="center" ><a href="_updateuser.php"><button type="submit" class="btn btn-default dropdown-toggle">Edit User</button></a></div>
               </div> -->
 
-              <div class="box-tools pull-right">
+              <!-- <div class="box-tools pull-right">
                 <div class="has-feedback">
                   <input type="text" class="form-control input-sm" placeholder="Search User">
                   <span class="glyphicon glyphicon-search form-control-feedback"></span>
                 </div>
-              </div>
+              </div> -->
               <!-- /.box-tools -->
             </div>
             <!-- /.box-header -->
@@ -37,7 +32,7 @@
                     <th width="150"> <div align="center">Email </div></th>
                     <th width="150"> <div align="center">Admin </div></th>
                     <!-- <th width="150"> <div align="center">Approval </div></th> -->
-                    <th width="150"> <div align="center">Edit user </div></th>
+                    <!-- <th width="150"> <div align="center">Edit user </div></th> -->
                     <th width="150"> <div align="center">Delete user </div></th>
                 </tr>
                 <?php
@@ -49,7 +44,7 @@
                     <td class="mailbox-name"><div align="center"><?php echo $objResult["us_email"];?></div></td>
                     <td class="mailbox-name"><div align="center"><?php echo $objResult["us_isadmin"];?></div></td>
                     <!-- <td class="mailbox-name"><div align="center"><?php echo $objResult["us_isapproval"];?></div></td> -->
-                    <td><div align="center"><button type="button" class="btn btn-info btn-primary fa fa-pencil"> Edit!</button></div></td>
+                    <!-- <td><div align="center"><button type="button" class="btn btn-info btn-primary fa fa-pencil"> Edit!</button></div></td> -->
                     <td><div align="center"><a href="_manageall_user.php?usname=<?php echo $objResult["us_username"];?>"><button type="button" class="btn btn-info btn-danger fa fa-trash"> Delete!</button></a></div></td>
                 </tr> 
                 <?php } ?>

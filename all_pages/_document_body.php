@@ -1,12 +1,7 @@
-<?php
-    if(!isset($_SESSION)) 
-    { 
-        session_start(); 
-    } 
-?>
 <?php include 'connectdb.php';?>
+<?phpsession_start();?>
 <?php
-  $strSQL = "SELECT * FROM tb_form_element";
+  $strSQL = "SELECT doc_id,doc_form_id FROM tb_document ";
   $objQuery = mysqli_query($mysqli,$strSQL);
 ?>
 
@@ -27,19 +22,22 @@
               <div class="table-responsive mailbox-messages">
               <table class="table table-hover table-striped">
                 <tr> 
-                    <!-- <th width="100"> <div align="center">Files ID </div></th> -->
+                    <th width="100"> <div align="center">Files ID </div></th>
                     <th width="150"> <div align="center">Document Template </div></th>
-                    <!-- <th width="150"> <div align="center">Files Name </div></th> -->
                     <th width="150"> <div align="center">Use Template </div></th>
                 </tr>
                 <?php $i=1;
                     while($objResult = mysqli_fetch_array($objQuery))
                     { ?>
                 <tr>
-                    <!-- <td class="mailbox-name"><div align="center"><?php echo $i;?></div></td> -->
-                    <td class="mailbox-name"><div align="center"><?php echo $objResult["ele_title"];?></div></td>
-                    <!-- <td class="mailbox-subject"><center><a href="file/<?php echo $objResult["ele_version_id"];?>"><?php echo $objResult["ele_version_id"];?></a></center></td> -->
-                    <td><div align="center"><a href="apply.php?eleid=<?php echo $objResult["ele_id"];?>" class="btn btn-info  btn-primary fa fa-print"> Use Template!</a></div></td>
+                    <td class="mailbox-name"><div align="center"><?php echo $objResult["doc_id"];?></div></td>
+                    <td class="mailbox-name"><div align="center"><?php echo $objResult["doc_form_id"];?></div></td>
+                    <td>
+                      <div align="center">
+                        <!-- <a href="__cdoc_preview.php?docform=<?php echo $objResult["doc_form_id"];?>" class="btn btn-info  btn-primary fa fa-print" target="_blank"> Use Template!</a> -->
+                        <a href="___test_preview.php?docform=<?php echo $objResult["doc_form_id"];?>" class="btn btn-info  btn-primary fa fa-print" target="_blank"> Use Template!</a>
+                      </div>
+                    </td>
                 </tr>
                 <?php $i++;} ?> 
               </table>

@@ -23,15 +23,5 @@
 <!-- AdminLTE for demo purposes -->
 <script src="dist/js/demo.js"></script> 
 
-<!-- jQuery -->
-<!-- <script src="plugins/jquery/jquery.min.js"></script>
-<script src="plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
-<script src="plugins/jquery-ui/jquery-ui.min.js"></script>
-<script src="dist/js/adminlte.min.js"></script>
-<script src="dist/js/demo.js"></script>
-<script src="plugins/moment/moment.min.js"></script>
-<script src="plugins/fullcalendar/main.min.js"></script>
-<script src="plugins/fullcalendar-daygrid/main.min.js"></script>
-<script src="plugins/fullcalendar-timegrid/main.min.js"></script>
-<script src="plugins/fullcalendar-interaction/main.min.js"></script>
-<script src="plugins/fullcalendar-bootstrap/main.min.js"></script> -->
+<script src="bower_components/datatables.net/js/jquery.dataTables.min.js"></script>
+<script src="bower_components/datatables.net-bs/js/dataTables.bootstrap.min.js"></script>

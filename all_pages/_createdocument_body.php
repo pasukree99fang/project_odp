@@ -1,10 +1,3 @@
-<?php
-    if(!isset($_SESSION)) 
-    { 
-        session_start(); 
-    } 
-?>
-<?php include 'connectdb.php';?>
 <div class="box box-info">
           <div class="box-header with-border">
             <h3 class="box-title">Create Document</h3>
@@ -25,32 +18,18 @@
                     <label>Document Title </label>
                         <input type="text" class="form-control" id="inputEmail3" name="inputEmail3" placeholder="Enter Document title">
                   </div>
-
-                  <!-- <div class="col-md-4">
-                  <div class="form-group">
-                        <label>File input</label>
-                        <input type="file" id="inputfile" name="inputfile">
-                        <p class="help-block">Choose file to set permissions.</p>
-                      </div>
-                  </div> -->
+                </div>
+                <div class="col-md-1"></div>
+                <div class="col-md-5">
+                  <a class="btn btn-app" type=button name="adminBtn" value="FILE" onclick="displayTextForm()">
+                    <i class="fa fa-text-width"></i> 
+                    <label>Text</label>
+                  </a>
                 </div>
               </div>
         
           
               <div class="row">
-                <!-- <div class="alert alert-warning alert-dismissible">
-                      <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
-                      <h4><i class="icon fa fa-warning"></i> Note!</h4>
-                      Pleas click on button to add tools in your document!!
-                </div> -->
-
-                <!-- <div class="col-md-1">
-                    <a class="btn btn-app" type=button name="adminBtn" value="FILE" onclick="displayTextForm()">
-                      <i class="fa fa-square"></i> 
-                      <label>Check All</label>
-                    </a>
-                </div> -->
-
                 <div class="col-md-1">
                     <a class="btn btn-app" type=button name="adminBtn" value="FILE" onclick="displayTextForm()">
                       <i class="fa fa-text-width"></i> 
@@ -169,9 +148,9 @@
           </div>
         </div>
 
-        <div class="box-footer">
+        <!-- <div class="box-footer">
           Please check correctness before pressing next.
-        </div>
+        </div> -->
 
         <div class="box-footer">
                 <!-- <button type="submit" class="btn btn-default"><a href="_createdocument.php">Back</a></button> -->

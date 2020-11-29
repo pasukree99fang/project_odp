@@ -8,7 +8,7 @@ if(move_uploaded_file($_FILES["InputfileUser"]["tmp_name"],"file/".$_FILES["Inpu
 if(isset($_POST['cpn_id'],$_POST['UsernameUser'],$_POST['PasswordUser'],$_POST['FirstnameUser']
 ,$_POST['LastnameUser'],$_POST['EmailUser'],$_POST['PasswordForApprove'],$_POST['IsAdminUser']
 ,$_POST['IsApprovalUser'],$file_input
-,$_POST['DepartmentUser'],$_POST['SubDepartmentUser'],$_POST['PositionUser'])){
+,$_POST['dp_us'],$_POST['sub_dp'],$_POST['pos'])){
 
     $cpn_id=$_POST['cpn_id'];
     $UsernameUser=$_POST['UsernameUser'];
@@ -19,62 +19,32 @@ if(isset($_POST['cpn_id'],$_POST['UsernameUser'],$_POST['PasswordUser'],$_POST['
     $PasswordForApprove=$_POST['PasswordForApprove'];
     $IsAdminUser=$_POST['IsAdminUser'];
     $IsApprovalUser=$_POST['IsApprovalUser'];
-    $DepartmentUser=$_POST['DepartmentUser'];
-    $SubDepartmentUser=$_POST['SubDepartmentUser'];
-    $PositionUser=$_POST['PositionUser'];
+    $DepartmentUser=$_POST['dp_us'];
+    $SubDepartmentUser=$_POST['sub_dp'];
+    $PositionUser=$_POST['pos'];
     if(isset($_POST['chkmanager'])){
         $chkmanager=$_POST['chkmanager'];
     }else{ $chkmanager=0; }
 
     // ManagerUser หา user id ของหัวหน้า
     $SQL0 = "SELECT a.us_id, a.us_username, a.us_firstname, a.us_manager,
-                b.afft_id, b.afft_user_id, b.afft_sub_department_id,
-                c.dpm_id,c.dpm_name FROM tb_user a 
-                LEFT OUTER JOIN (SELECT * FROM tb_affiliation) b ON (a.us_id=b.afft_user_id) 
-                LEFT OUTER JOIN (SELECT * FROM tb_department) c ON (b.afft_department_id=c.dpm_id)
-                WHERE a.us_manager = '1' and c.dpm_id = '".$_POST['DepartmentUser']."'";
+                c.cpn_id, c.cpn_name, b.pst_id,b.pst_name FROM tb_user a 
+                LEFT OUTER JOIN (SELECT * FROM tb_position) b ON (a.us_po = b.pst_id)
+                LEFT OUTER JOIN (SELECT * FROM tb_company) c ON (a.us_company_id = c.cpn_id)
+                WHERE a.us_manager = '1' and a.us_company_id = '".$_POST['cpn_id']."'";
                 $objQuery0 = mysqli_query($mysqli,$SQL0);
 				$objResult0 = mysqli_fetch_array($objQuery0,MYSQLI_ASSOC);
                 echo $ManagerUser = $objResult0['us_username'];
                 echo "<br>";
 $sql1="INSERT INTO tb_user (us_username, us_password, us_firstname, us_lastname, us_email, us_password_approve,
-                us_manager_id, us_manager, us_isadmin, us_isapproval, us_company_id, us_photo) 
+                us_manager_id, us_isadmin, us_isapproval, us_company_id, us_dp, us_sub_dp, us_po, us_manager, us_photo) 
 VALUES ('$UsernameUser','$PasswordUser','$FirstnameUser','$LastnameUser','$EmailUser','$PasswordForApprove','$ManagerUser',
-'$chkmanager','$IsAdminUser','$IsApprovalUser','$cpn_id','$file_input')";
+'$IsAdminUser','$IsApprovalUser','$cpn_id','$DepartmentUser','$SubDepartmentUser','$PositionUser''$chkmanager','$file_input')";
 $query=mysqli_query($mysqli, $sql1);
 
 
-// echo $sql1;
+echo $sql1;
 echo "<script>alert('Save Data Complete'); window.location.href='_createuser.php';</script>";  
-}else echo "<script>alert('Please enter data completely'); window.location.href='_createuser.php';</script>";
-
-// echo $_POST['cpn_id'];
-// echo "<br>";
-// echo $_POST['UsernameUser'];
-// echo "<br>";
-// echo $_POST['PasswordUser'];
-// echo "<br>";
-// echo $_POST['FirstnameUser'];
-// echo "<br>";
-// echo $_POST['LastnameUser'];
-// echo "<br>";
-// echo $_POST['EmailUser'];
-// echo "<br>";
-// echo $_POST['PasswordForApprove'];
-// echo "<br>";
-// echo $_POST['IsAdminUser'];
-// echo "<br>";
-// echo $_POST['IsApprovalUser'];
-// echo "<br>";
-// echo $_POST['DepartmentUser'];
-// echo "<br>";
-// echo $_POST['SubDepartmentUser'];
-// echo "<br>";
-// echo $_POST['PositionUser'];
-// echo "<br>";
-// echo $file_input;
-// echo "<br>";
-// echo $chkmanager;
-// echo "<br>";
-
+}
+else echo "<script>alert('Please enter data completely'); window.location.href='_createuser.php';</script>";
 ?>

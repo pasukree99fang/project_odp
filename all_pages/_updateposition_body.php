@@ -1,10 +1,5 @@
-<?php
-    if(!isset($_SESSION)) 
-    { 
-        session_start(); 
-    } 
-?>
 <?php include 'connectdb.php';?>
+<?phpsession_start();?>
 
 <div class="row">
         <div class="col-md-12">
@@ -12,8 +7,6 @@
                     <div class="box-header with-border">
                         <h3 class="box-title">Edit Sub Department </h3>
                     </div>
-
-
                     <!-- form start -->
                     <form role="form">
                         <div class="box-body">

@@ -2,7 +2,7 @@
 <html>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
-<script> 
+<!-- <script> 
     $(document).ready(function(e) {
         increaseNotify();
         setInterval(increaseNotify, 3000);
@@ -11,7 +11,7 @@
         })
     });
  
-    function increaseNotify() { // โหลดตัวเลขทั้งหมดที่ถูกส่งมาแสดง
+    function increaseNotify() { 
         $.ajax({
             url: "increase.php",
             type: 'GET',
@@ -22,7 +22,7 @@
         });
     }
 
-    function decreaseNotify(){ // ลบตัวเลข badge number
+    function decreaseNotify(){ 
 	$.ajax({
 		url: "decrease.php",
 		type: 'GET',
@@ -37,6 +37,6 @@
 
     <p class="badge_number">0</p>แจ้งเตือน<span class="caret"></span>
     <button id="btn1">clear</button>
-</body>
+</body> -->
 
 </html>

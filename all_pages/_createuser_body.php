@@ -1,10 +1,4 @@
-<?php
-    if(!isset($_SESSION)) 
-    { 
-        session_start(); 
-    } 
-?>
-<?php include 'connectdb.php';?>
+<?php include 'connectdb.php'; ?>
 <?php
   $strSQL = "SELECT * FROM tb_form_element";
   $objQuery = mysqli_query($mysqli,$strSQL);
@@ -120,7 +114,7 @@
                                             $strSQL2 = "SELECT * FROM tb_department";
                                             $objQuery2 = mysqli_query($mysqli,$strSQL2);
                                         ?>
-                                        <select class="form-control select2" style="width: 100%;" name="DepartmentUser">
+                                        <select class="form-control select2" style="width: 100%;" name="dp_us" id="dp_us">
                                             <option value="" selected disabled>Choose Department</option>
                                             <?php
                                                 while($objResult2 = mysqli_fetch_array($objQuery2))
@@ -135,17 +129,8 @@
                                 <div class="col-md-4">
                                     <div class="form-group">
                                         <label>Sub Department</label>
-                                        <?php
-                                            $strSQL3 = "SELECT * FROM tb_sub_department";
-                                            $objQuery3 = mysqli_query($mysqli,$strSQL3);
-                                        ?>
-                                        <select class="form-control select2" style="width: 100%;" name="SubDepartmentUser">
-                                            <option value="" selected disabled>Choose Sub Department</option>
-                                            <?php
-                                                while($objResult3 = mysqli_fetch_array($objQuery3))
-                                                { ?>
-                                                <option value="<?php echo $objResult3['sub_id']; ?>"><?php echo $objResult3['sub_name']; ?></option>
-                                            <?php } ?>
+                                        <select class="form-control" name="sub_dp" id="sub_dp">
+                                            <option value="" selected disabled>Choose Department</option>
                                         </select>
                                     </div>
                                 </div>
@@ -154,17 +139,8 @@
                                 <div class="col-md-4">
                                     <div class="form-group">
                                         <label>Position</label>
-                                        <?php
-                                            $strSQL = "SELECT * FROM tb_position";
-                                            $objQuery = mysqli_query($mysqli,$strSQL);
-                                        ?>
-                                        <select class="form-control select2" style="width: 100%;" name="PositionUser">
-                                            <option value="" selected disabled>Choose Position</option>
-                                            <?php
-                                                while($objResult = mysqli_fetch_array($objQuery))
-                                                { ?>
-                                                <option value="<?php echo $objResult['pst_id'] ?>"><?php echo $objResult['pst_name']; ?></option>
-                                            <?php } ?>
+                                        <select class="form-control" name="pos" id="pos">
+                                            <option value="" selected disabled>Choose Department</option>
                                         </select>
                                     </div>
                                 </div>
@@ -199,3 +175,45 @@
             </div>
         </div>
 </div>
+<script type="text/javascript">
+    $('#dp_us').on('change',function(){
+        var dp_id = $(this).val();
+        //console.log(dp_id);
+        if(dp_id){
+          //console.log('เข้า ajax '+brand);
+            $.ajax({
+                type:'POST',
+                url:'ajax_create_user.php',
+                data:'depart='+dp_id,
+                success:function(html){
+                    //console.log('เข้า success '+html);
+                    $('#sub_dp').html(html);
+                    //$('#n_product').html(html);
+                    $('#pos').html('<option value="" selected disabled>Choose Sub Department</option>');
+                }
+            }); 
+        }else{
+            $('#pos').html('<option value="" selected disabled>No!</option>');
+            //$('#reservation').html('<option value="" selected disabled>ไม่พบรุ่นรถ</option>');
+        }
+      });
+
+      $('#sub_dp').on('change',function(){
+        var sub_dp = $(this).val();
+        //console.log(sub_dp);
+        if(sub_dp){
+          //console.log('เข้า ajax '+brand);
+            $.ajax({
+                type:'POST',
+                url:'ajax_create_user.php',
+                data:'sub_dpid='+sub_dp,
+                success:function(html){
+                    //console.log('เข้า success '+html);
+                    $('#pos').html(html);
+                }
+            }); 
+        }else{
+            $('#pos').html('<option value="" selected disabled>No Data!</option>');
+        }
+      });
+</script>

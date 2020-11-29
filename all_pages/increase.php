@@ -1,11 +1,10 @@
 <?php
 include 'connectdb.php';
 	
-session_start();
+// session_start();
 //$member_token = $_SESSION['member_token'];
 	
-$result_increase = mysqli_query($mysqli, "SELECT * FROM tb_notification 
-WHERE noti_user_id_receiver = '".$_SESSION['us_id']."' AND msg_status = 1");
+$result_increase = mysqli_query($mysqli, "SELECT member_token FROM tb_notification WHERE member_token = 2 AND msg_status = 1");
 $badge_number = mysqli_num_rows($result_increase);
 $data = array(
 	'badge_number' => $badge_number

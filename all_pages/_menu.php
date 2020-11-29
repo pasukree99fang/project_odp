@@ -3,40 +3,9 @@
     { 
         session_start(); 
     } 
-?>
-<?php include 'connectdb.php';?>
+	include 'connectdb.php';
+?> 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-
-<script>
-    $(document).ready(function(e) {
-        increaseNotify();
-        setInterval(increaseNotify, 3000);
-        $("#btn1").click(function(){
-            decreaseNotify()
-        })
-    });
-
-    function increaseNotify() { // โหลดตัวเลขทั้งหมดที่ถูกส่งมาแสดง
-        $.ajax({
-            url: "increase.php",
-            type: 'GET',
-            success: function(obj) {
-                var obj = JSON.parse(obj);
-                $(".badge_number").text(obj.badge_number);
-            }
-        });
-    }
-
-    function decreaseNotify(){ // ลบตัวเลข badge number
-	$.ajax({
-		url: "decrease.php",
-		type: 'GET',
-		success: function(obj) {
-			
-		}
-	});
-}
-</script>
 
 <header class="main-header">
 <?php include 'connectdb.php'; ?>
@@ -53,21 +22,14 @@
         <ul class="nav navbar-nav">
           
           <li class="dropdown notifications-menu">
-            <a href="#" id="btn1" class="dropdown-toggle" data-toggle="dropdown">
+            <!-- <a href="#" id="btn1" class="dropdown-toggle" data-toggle="dropdown">
               <i class="fa fa-bell-o"></i>
-              <span class="badge_number label label-warning">9</span>
-            </a>
-            <?php 
-                $sqlnoti = "SELECT msg_text FROM tb_notification WHERE noti_user_id_receiver = '".$_SESSION['us_id']."' LIMIT 5" ;
-                $result = mysqli_query($mysqli,$sqlnoti);
-                ?>
+              <span class="badge_number label label-warning">0</span>
+            </a> -->
             <ul class="dropdown-menu">
               <li class="header">You have notifications</li>
               <li>
-                <?php
-                  while ($noti = mysqli_fetch_assoc($result)){
-                    echo '<ul class="menu">'.$noti['msg_text'].'</ul>';}
-                  ?>
+                
                 <ul class="menu">
                   
                 </ul>
@@ -87,31 +49,25 @@
 
 
                 <!-- DB1 tb_position -->
-                <?php $SQL1 = "SELECT a.us_id, a.us_username, a.us_firstname, 
-                b.afft_id, b.afft_user_id, b.afft_sub_department_id,
-                c.pst_id,c.pst_name FROM tb_user a 
-                LEFT OUTER JOIN (SELECT * FROM tb_affiliation) b ON (a.us_id=b.afft_user_id) 
-                LEFT OUTER JOIN (SELECT * FROM tb_position) c ON (b.afft_position_id=c.pst_id)
+                <?php $SQL1 = "SELECT a.us_id, a.us_username, a.us_po,
+                b.pst_id,b.pst_name FROM tb_user a 
+                LEFT OUTER JOIN (SELECT * FROM tb_position) b ON (a.us_po = b.pst_id)
                 WHERE us_username = '".$_SESSION['us_username']."'";
                 $objQuery1 = mysqli_query($mysqli,$SQL1);
                 $objResult1 = mysqli_fetch_array($objQuery1,MYSQLI_ASSOC); ?>
                 
                 <!-- DB2 tb_department -->
-                <?php $SQL2 = "SELECT a.us_id, a.us_username, a.us_firstname, 
-                b.afft_id, b.afft_user_id, b.afft_sub_department_id,
-                c.dpm_id,c.dpm_name FROM tb_user a 
-                LEFT OUTER JOIN (SELECT * FROM tb_affiliation) b ON (a.us_id=b.afft_user_id) 
-                LEFT OUTER JOIN (SELECT * FROM tb_department) c ON (b.afft_department_id=c.dpm_id)
+                <?php $SQL2 = "SELECT a.us_id, a.us_username, a.us_dp, 
+                b.dpm_id,b.dpm_name FROM tb_user a 
+                LEFT OUTER JOIN (SELECT * FROM tb_department) b ON (a.us_dp = b.dpm_id)
                 WHERE us_username = '".$_SESSION['us_username']."'";
                 $objQuery2 = mysqli_query($mysqli,$SQL2);
                 $objResult2 = mysqli_fetch_array($objQuery2,MYSQLI_ASSOC); ?> 
  
                 <!-- DB3 tb_sub_department -->
-                <?php $SQL3 = "SELECT a.us_id, a.us_username, a.us_firstname, 
-                b.afft_id, b.afft_user_id, b.afft_sub_department_id,
-                c.sub_id,c.sub_name FROM tb_user a 
-                LEFT OUTER JOIN (SELECT * FROM tb_affiliation) b ON (a.us_id=b.afft_user_id) 
-                LEFT OUTER JOIN (SELECT * FROM tb_sub_department) c ON (b.afft_sub_department_id=c.sub_id)
+                <?php $SQL3 = "SELECT a.us_id, a.us_username, a.us_sub_dp, 
+                b.sub_id,b.sub_name FROM tb_user a 
+                LEFT OUTER JOIN (SELECT * FROM tb_sub_department) b ON (a.us_sub_dp = b.sub_id)
                 WHERE us_username = '".$_SESSION['us_username']."'";
                 $objQuery3 = mysqli_query($mysqli,$SQL3);
                 $objResult3 = mysqli_fetch_array($objQuery3,MYSQLI_ASSOC); ?> 
@@ -119,7 +75,7 @@
 
                 <p>
                 <?php echo $_SESSION['us_firstname']; ?> <?php echo $_SESSION['us_lastname']; ?> - <?php echo $objResult1['pst_name']; ?>
-                  <small><?php echo $objResult2['dpm_name']; ?> : <?php echo $objResult3['sub_name']; ?></small>
+                  <?php echo $objResult2['dpm_name']; ?> : <?php echo $objResult3['sub_name']; ?>
                 </p>
               </li>
 
@@ -155,8 +111,9 @@
         <li><a href="_home.php"><i class="fa fa-edit"></i> <span>Home</span></a></li>
         <li class="header">FOR USER</li>
         <li><a href="_document.php"><i class="fa fa-table"></i> <span>Document</span></a></li>
+        <li><a href="_status_all.php"><i class="fa fa-envelope"></i> <span>Status</span></a></li>
         
-        <li class="treeview">
+        <!-- <li class="treeview">
           <a href="_status.php">
             <i class="fa fa-envelope"></i> <span>Status</span>
             <span class="pull-right-container">
@@ -169,11 +126,12 @@
             <li><a href="_status_pending.php"><i class="fa fa-circle-o text-yellow"></i> Pending</a></li>
             <li><a href="_status_approved.php"><i class="fa fa-circle-o text-green"></i> Approved</a></li>
           </ul>
-        </li>
+        </li> -->
         
         <?php if($_SESSION['us_isapproval']=='yes'|| $_SESSION['us_isadmin']=='yes'){ ?>
         <li class="header">FOR APPROVE</li>
-        <li class="treeview">
+        <li><a href="_approve_all.php"><i class="fa fa-folder"></i> <span>Approve</span></a></li>
+        <!-- <li class="treeview">
             <a href="_approve.php">
               <i class="fa fa-folder"></i> <span>Approve</span>
               <span class="pull-right-container">
@@ -186,7 +144,7 @@
             <li><a href="_approve_pending.php"><i class="fa fa-circle-o text-red"></i> Pending</a></li>
             <li><a href="_approve_approved.php"><i class="fa fa-circle-o text-green"></i> Approved</a></li>
           </ul>
-        </li>
+        </li> -->
         <?php } ?>
 
         <?php if($_SESSION['us_isadmin']=='yes'){ ?>
@@ -206,7 +164,8 @@
           <ul class="treeview-menu">
             <li><a href="_createdepartment.php"><i class="fa fa-share"></i> Organization Architecture</a></li>
             <li><a href="_createuser.php"><i class="fa fa-share"></i> User</a></li>
-            <li><a href="_createdocument.php"><i class="fa fa-share"></i> Document</a></li>9
+            <!-- <li><a href="_createdocument.php"><i class="fa fa-share"></i> Document</a></li> -->
+            <li><a href="__cdocfix.php"><i class="fa fa-share"></i> Document</a></li>
           </ul>
         </li>
         <?php } ?>
