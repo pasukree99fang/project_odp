@@ -1,3 +1,13 @@
+<?php
+ if(!isset($_SESSION)) 
+ { 
+     session_start(); 
+ } 
+ include 'connectdb.php';
+ if ($_SESSION['us_username'] == null){
+  echo "<script>alert('กรุณาเข้าสู่ระบบ'); window.location.href='../login.html';</script>";
+ }
+?>
 <?php 
 include '_session_login.php';
 include 'connectdb.php';

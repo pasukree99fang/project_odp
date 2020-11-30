@@ -1,4 +1,13 @@
-<?php include 'connectdb.php'; ?>
+<?php
+ if(!isset($_SESSION)) 
+ { 
+     session_start(); 
+ } 
+ include 'connectdb.php';
+ if ($_SESSION['us_username'] == null){
+  echo "<script>alert('กรุณาเข้าสู่ระบบ'); window.location.href='../login.html';</script>";
+ }
+?>
 <?php
   $strSQL = "SELECT * FROM tb_form_element";
   $objQuery = mysqli_query($mysqli,$strSQL);
