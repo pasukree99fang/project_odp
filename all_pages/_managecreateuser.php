@@ -9,16 +9,14 @@
  }
 ?>
 <?php
-    session_start();
     include 'connectdb.php'; 
     //เก็บไฟล์รูป
-if(move_uploaded_file($_FILES["InputfileUser"]["tmp_name"],"file/".$_FILES["InputfileUser"]["name"])){
-    $file_input=$_FILES["InputfileUser"]["name"];
-}
+// if(move_uploaded_file($_FILES["InputfileUser"]["tmp_name"],"file/".$_FILES["InputfileUser"]["name"])){
+//     $file_input=$_FILES["InputfileUser"]["name"];
+// }
 if(isset($_POST['cpn_id'],$_POST['UsernameUser'],$_POST['PasswordUser'],$_POST['FirstnameUser']
 ,$_POST['LastnameUser'],$_POST['EmailUser'],$_POST['PasswordForApprove'],$_POST['IsAdminUser']
-,$_POST['IsApprovalUser'],$file_input
-,$_POST['dp_us'],$_POST['sub_dp'],$_POST['pos'])){
+,$_POST['IsApprovalUser'],$_POST['dp_us'],$_POST['sub_dp'],$_POST['pos'])){
 
     $cpn_id=$_POST['cpn_id'];
     $UsernameUser=$_POST['UsernameUser'];
@@ -44,12 +42,12 @@ if(isset($_POST['cpn_id'],$_POST['UsernameUser'],$_POST['PasswordUser'],$_POST['
                 WHERE a.us_manager = '1' and a.us_company_id = '".$_POST['cpn_id']."'";
                 $objQuery0 = mysqli_query($mysqli,$SQL0);
 				$objResult0 = mysqli_fetch_array($objQuery0,MYSQLI_ASSOC);
-                echo $ManagerUser = $objResult0['us_username'];
+                $ManagerUser = $objResult0['us_username'];
                 echo "<br>";
 $sql1="INSERT INTO tb_user (us_username, us_password, us_firstname, us_lastname, us_email, us_password_approve,
-                us_manager_id, us_isadmin, us_isapproval, us_company_id, us_dp, us_sub_dp, us_po, us_manager, us_photo) 
+                us_manager_id, us_isadmin, us_isapproval, us_company_id, us_dp, us_sub_dp, us_po, us_manager) 
 VALUES ('$UsernameUser','$PasswordUser','$FirstnameUser','$LastnameUser','$EmailUser','$PasswordForApprove','$ManagerUser',
-'$IsAdminUser','$IsApprovalUser','$cpn_id','$DepartmentUser','$SubDepartmentUser','$PositionUser','$chkmanager','$file_input')";
+'$IsAdminUser','$IsApprovalUser','$cpn_id','$DepartmentUser','$SubDepartmentUser','$PositionUser','$chkmanager')";
 $query=mysqli_query($mysqli, $sql1);
 
 
