@@ -1,4 +1,14 @@
 <?php
+ if(!isset($_SESSION)) 
+ { 
+     session_start(); 
+ } 
+ include 'connectdb.php';
+ if ($_SESSION['us_username'] == null){
+  echo "<script>alert('กรุณาเข้าสู่ระบบ'); window.location.href='../login.html';</script>";
+ }
+?>
+<?php
 $connect = mysqli_connect("localhost", "root", "", "odp");
 $number = count($_POST["name"]);
 //echo $_POST["cpn_id"];
