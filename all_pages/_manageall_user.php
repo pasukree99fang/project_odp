@@ -9,7 +9,6 @@
  }
 ?>
 <?php 
-	session_start();
     include 'connectdb.php'; 
 
     echo $usernamedelete=$_REQUEST['usname'];

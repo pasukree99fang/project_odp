@@ -9,7 +9,6 @@
  }
 ?>
 <?php 
-	session_start();
     include 'connectdb.php'; 
 
     if(isset($_REQUEST['dpmid_delete'])){
