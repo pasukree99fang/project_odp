@@ -40,12 +40,12 @@
           
           <li class="dropdown user user-menu ">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-              <img src="file/pasu.jpg" class="user-image" alt="User Image">
+              <img src="file/me.png" class="user-image" alt="User Image">
               <span class="hidden-xs"><?php echo $_SESSION['us_firstname']; ?> <?php echo $_SESSION['us_lastname']; ?></span>
             </a>
             <ul class="dropdown-menu">
               <li class="user-header">
-                <img src="file/pasu.jpg" class="img-circle" alt="User Image">
+                <img src="file/me.png" class="img-circle" alt="User Image">
 
 
                 <!-- DB1 tb_position -->
@@ -99,7 +99,7 @@
     <section class="sidebar">
       <div class="user-panel">
         <div class="pull-left image">
-          <img src="file/pasu.jpg" class="img-circle" alt="User Image">
+          <img src="file/me.png" class="img-circle" alt="User Image">
         </div>
         <div class="pull-left info">
           <p><?php echo $_SESSION['us_firstname']; ?> <?php echo $_SESSION['us_lastname']; ?> </p>
