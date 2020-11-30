@@ -39,11 +39,11 @@ if(isset($_POST['cpn_id'],$_POST['UsernameUser'],$_POST['PasswordUser'],$_POST['
 $sql1="INSERT INTO tb_user (us_username, us_password, us_firstname, us_lastname, us_email, us_password_approve,
                 us_manager_id, us_isadmin, us_isapproval, us_company_id, us_dp, us_sub_dp, us_po, us_manager, us_photo) 
 VALUES ('$UsernameUser','$PasswordUser','$FirstnameUser','$LastnameUser','$EmailUser','$PasswordForApprove','$ManagerUser',
-'$IsAdminUser','$IsApprovalUser','$cpn_id','$DepartmentUser','$SubDepartmentUser','$PositionUser''$chkmanager','$file_input')";
+'$IsAdminUser','$IsApprovalUser','$cpn_id','$DepartmentUser','$SubDepartmentUser','$PositionUser','$chkmanager','$file_input')";
 $query=mysqli_query($mysqli, $sql1);
 
 
-echo $sql1;
+// echo $sql1;
 echo "<script>alert('Save Data Complete'); window.location.href='_createuser.php';</script>";  
 }
 else echo "<script>alert('Please enter data completely'); window.location.href='_createuser.php';</script>";

@@ -25,7 +25,7 @@
                     <th width="100"> <div align="center">Username </div></th>
                     <th width="150"> <div align="center">Name </div></th>
                     <th width="150"> <div align="center">Approval </div></th>
-                    <th width="150"> <div align="center">Edit Approval </div></th>
+                    <th width="150"> <div align="center">Change </div></th>
                 </tr> 
                 <?php
                     while($objResult = mysqli_fetch_array($objQuery))
