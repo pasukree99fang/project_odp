@@ -9,8 +9,6 @@
  }
 ?>
 <?php 
-	session_start();
-    include 'connectdb.php'; 
 
     $eleid=$_REQUEST['eleid'];
     echo "<br>";
