@@ -9,7 +9,6 @@
  }
 ?>
 <?php
-session_start(); 
 error_reporting(E_ALL ^ E_NOTICE);
 $connect = mysqli_connect("localhost", "root", "", "odp");
 $dtitle=$_POST['dtitle'];
